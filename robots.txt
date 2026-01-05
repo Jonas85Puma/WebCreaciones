@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://webcreaciones.vercel.app/sitemap.xml
+
+# Disallow
+Disallow: /Img/
+
+# Crawl-delay
+Crawl-delay: 0

@@ -37,12 +37,38 @@
     <meta name="theme-color" content="#2563eb">
     <meta name="msapplication-TileColor" content="#2563eb">
     
+    <!-- Critical CSS inline para renderizado inmediato -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary-color:#2563eb;--dark-color:#1f2937;--text-color:#374151;--white:#fff}
+        body{font-family:'Poppins',sans-serif;line-height:1.6;color:var(--text-color);background:var(--white)}
+        .header{background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;z-index:1000}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .header .container{display:flex;justify-content:space-between;align-items:center;padding:1rem 20px}
+        .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
+    </style>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preconnect para optimizar carga de recursos externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Cargar fuentes de forma asíncrona con font-display:swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"></noscript>
+    
+    <!-- Cargar Font Awesome de forma asíncrona -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Script para cargar CSS asíncronamente (fallback para navegadores antiguos) -->
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        !function(e){"use strict";var t=function(t,n,r){var o,i=e.document,l=i.createElement("link");if(n)o=n;else{var a=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=a[a.length-1]}var d=i.styleSheets;l.rel="stylesheet",l.href=t,l.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(l,n?o:o.nextSibling)});var f=function(e){for(var t=l.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return l.addEventListener&&l.addEventListener("load",function(){this.media=r||"all"}),l.onloadcssdefined=f,f(function(){l.media!==r&&(l.media=r)}),l};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
     
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
@@ -694,7 +720,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="animations.js"></script>
+    <script src="script.js" defer></script>
+    <script src="animations.js" defer></script>
 </body>
 </html>

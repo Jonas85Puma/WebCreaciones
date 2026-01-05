@@ -26,38 +26,6 @@ Landing page profesional para servicios de desarrollo web freelance. Optimizado 
 - ✅ Notificaciones por email
 - ✅ Página de agradecimiento
 
-## 📋 Configuración Rápida
-
-### 1️⃣ Web3Form Access Key
-
-1. Ve a [https://web3forms.com](https://web3forms.com)
-2. Regístrate con: **webcreaciones.dev@gmail.com**
-3. Obtén tu Access Key
-4. Edita `index.html` (línea ~540):
-```html
-<input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
-```
-
-### 2️⃣ Deploy en Vercel
-
-```bash
-# Instalar CLI
-npm i -g vercel
-
-# Login
-vercel login
-
-# Deploy
-vercel --prod
-```
-
-### 3️⃣ Actualizar URLs
-
-Después del deploy, reemplaza en `index.html`:
-- `https://webcreaciones.vercel.app` → Tu URL de Vercel
-- Meta tags (línea ~20)
-- Canonical URL (línea ~15)
-
 ## 🛠️ Archivos Incluidos
 
 ```
@@ -85,7 +53,7 @@ landing-page/
 ```
 
 ### Contacto:
-- WhatsApp: +51 960 407 014
+- WhatsApp: +51 943850706
 - Email: webcreaciones.dev@gmail.com
 
 ## 📊 SEO Implementado
@@ -168,5 +136,3 @@ WhatsApp: +51 960 407 014
 - Muestra todo el proyecto
 - Explica el valor entregado
 - Demuestra competencia técnica
-
----

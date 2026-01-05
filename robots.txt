@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://webcreaciones.vercel.app/sitemap.xml
+Sitemap: https://web-creaciones.vercel.app/sitemap.xml
 
 # Disallow
 Disallow: /Img/

@@ -2405,42 +2405,6 @@ body {
     }
 }
 
-/* Efecto shimmer sutil en "Una Semana" - desktop y móvil */
-.hero .accent {
-    position: relative;
-    background: linear-gradient(90deg,
-            #2563eb 0%,
-            #3b82f6 25%,
-            #60a5fa 50%,
-            #3b82f6 75%,
-            #2563eb 100%);
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: 0% center;
-    }
-
-    100% {
-        background-position: 200% center;
-    }
-}
-
-/* Asegurar que el efecto se vea bien en todos los dispositivos */
-@supports (-webkit-background-clip: text) {
-    .hero .accent {
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
-
 /* Animaciones móviles para carruseles horizontales - Bucle infinito perfecto */
 @keyframes scroll-left-mobile {
     0% {

@@ -14,11 +14,11 @@ function initAnimations() {
     };
 
     // Crear el observer
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-                
+
                 // Si tiene elementos hijos para animar con stagger
                 const staggerElements = entry.target.querySelectorAll('.animate-cards');
                 staggerElements.forEach((el, index) => {

@@ -50,6 +50,7 @@ body {
 
 /* Optimización de animaciones para rendimiento */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -372,8 +373,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 .hero h1 {
@@ -409,8 +417,15 @@ body {
 }
 
 @keyframes expandWidth {
-    from { width: 0; left: 50%; }
-    to { width: 100%; left: 0; }
+    from {
+        width: 0;
+        left: 50%;
+    }
+
+    to {
+        width: 100%;
+        left: 0;
+    }
 }
 
 /* Subtítulo mejorado */
@@ -502,7 +517,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -613,8 +628,13 @@ body {
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .stat-number {
@@ -689,6 +709,7 @@ body {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -700,6 +721,7 @@ body {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -711,6 +733,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -721,6 +744,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -744,7 +768,8 @@ body {
 .carousel-track {
     display: flex;
     flex-direction: column;
-    height: 300%; /* Triplicamos la altura para las imágenes triplicadas */
+    height: 300%;
+    /* Triplicamos la altura para las imágenes triplicadas */
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-play-state: running;
@@ -790,8 +815,10 @@ body {
     0% {
         transform: translateY(0%);
     }
+
     100% {
-        transform: translateY(-33.333%); /* Un tercio para bucle perfecto con triplicación */
+        transform: translateY(-33.333%);
+        /* Un tercio para bucle perfecto con triplicación */
     }
 }
 
@@ -799,6 +826,7 @@ body {
     0% {
         transform: translateY(-33.333%);
     }
+
     100% {
         transform: translateY(0%);
     }
@@ -834,10 +862,21 @@ body {
     transform: translateY(0) translateZ(0);
 }
 
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
 
 /* ========================================
    SECTION HEADERS
@@ -1442,8 +1481,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .portfolio-content {
@@ -1985,9 +2029,11 @@ body {
     0% {
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
+
     50% {
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
     }
+
     100% {
         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
@@ -2000,7 +2046,7 @@ body {
     .hero-content-wrapper {
         grid-template-columns: 150px 1fr 150px;
     }
-    
+
     .carousel-track img {
         width: 140px;
         height: 90px;
@@ -2026,22 +2072,23 @@ body {
         max-height: calc(100vh - 72px);
         overflow-y: auto;
     }
-    
+
     @keyframes slideDown {
         from {
             opacity: 0;
             transform: translateY(-20px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
-    
+
     .nav.active {
         display: flex;
     }
-    
+
     .nav-link {
         padding: 1rem 2rem;
         width: 100%;
@@ -2051,12 +2098,12 @@ body {
         display: block;
         border-bottom: 1px solid #f1f5f9;
     }
-    
+
     .nav-link:hover {
         background: #f8fafc;
         color: var(--primary-color);
     }
-    
+
     .nav-link.btn {
         margin: 1rem 1.5rem 0.5rem;
         background: var(--primary-color);
@@ -2065,93 +2112,94 @@ body {
         padding: 0.875rem 2rem;
         border: none;
     }
-    
+
     .nav-link.btn:hover {
         background: #1d4ed8;
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     }
-    
+
     .mobile-menu {
         display: block;
     }
-    
+
     .logo img {
         height: 38px;
     }
-    
+
     .hero {
         min-height: 100vh;
         padding: 80px 0 40px;
     }
-    
+
     .hero-content-wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
-    
+
     .carousel-container {
         height: 80px;
         order: 1;
     }
-    
+
     .hero .container {
         grid-column: 1;
         order: 2;
     }
-    
+
     .right-carousel {
         order: 3;
     }
-    
+
     .carousel-track {
         flex-direction: row;
         height: auto;
-        width: 300%; /* Triplicamos el ancho para las imágenes triplicadas */
+        width: 300%;
+        /* Triplicamos el ancho para las imágenes triplicadas */
     }
-    
+
     .left-carousel .carousel-track {
         animation: scroll-left-mobile 15s linear infinite;
     }
-    
+
     .right-carousel .carousel-track {
         animation: scroll-right-mobile 18s linear infinite;
     }
-    
+
     .carousel-track img {
         width: 100px;
         height: 60px;
         margin-bottom: 0;
         margin-right: 15px;
     }
-    
+
     /* Estilos móviles para elementos minimalistas */
     .hero-badge {
         margin-bottom: 1.5rem;
     }
-    
+
     .badge-text {
         font-size: 0.8rem;
     }
-    
+
     .hero h1 {
         font-size: 2.8rem;
         margin-bottom: 1.5rem;
         letter-spacing: -2px;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
         margin-bottom: 2rem;
         max-width: 100%;
     }
-    
+
     .trust-indicators {
         flex-direction: column;
         gap: 1rem;
         margin-bottom: 2.5rem;
     }
-    
+
     .trust-item {
         justify-content: center;
     }
@@ -2167,128 +2215,241 @@ body {
         margin-bottom: 3rem;
         gap: 1rem;
     }
-    
+
     .btn-modern {
         width: 100%;
         max-width: 280px;
         min-width: auto;
     }
-    
+
     .btn-arrow {
         display: none;
     }
-    
+
     .hero-stats-modern {
         flex-direction: column;
         gap: 1.5rem;
         padding: 1.5rem 0;
     }
-    
+
     .stat-divider {
         display: none;
     }
-    
+
     .stat-circle {
         width: 60px;
         height: 60px;
     }
-    
+
     .stat-number {
         font-size: 1.5rem;
     }
-    
-    
+
+
     .hero-stats {
         gap: 2rem;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .stat {
         min-width: 200px;
         padding: 1.5rem;
     }
-    
+
     .stat-number {
         font-size: 2.5rem;
     }
-    
+
     .section-header h2 {
         font-size: 2.2rem;
     }
-    
+
     .section-header::before {
         width: 60px;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .service-card {
         padding: 2rem;
     }
-    
+
     .service-icon {
         width: 70px;
         height: 70px;
     }
-    
+
     .service-icon i {
         font-size: 1.8rem;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .feature-card {
         padding: 2rem;
     }
-    
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .pricing-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .whatsapp-float {
         width: 55px;
         height: 55px;
         bottom: 20px;
         right: 20px;
     }
-    
+
     .whatsapp-float i {
         font-size: 1.5rem;
     }
 }
+
+/* ========================================
+   MEJORAS ADICIONALES PARA MÓVILES
+   Optimizaciones sutiles sin afectar desktop
+   ======================================== */
+@media (max-width: 768px) {
+
+    /* Reduce aún más el título para que los botones sean visibles */
+    .hero h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2;
+    }
+
+    /* Subtítulo más compacto */
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+        line-height: 1.5;
+    }
+
+    /* Trust indicators más compactos */
+    .trust-indicators {
+        gap: 0.75rem !important;
+        margin-bottom: 1.75rem !important;
+    }
+
+    .trust-item {
+        font-size: 0.75rem !important;
+        opacity: 0.9;
+    }
+
+    .trust-item i {
+        font-size: 0.85rem !important;
+    }
+
+    /* Badge más compacto */
+    .hero-badge {
+        margin-bottom: 1rem !important;
+        padding: 6px 14px;
+    }
+
+    /* Botones más visibles */
+    .hero-buttons {
+        margin-bottom: 2rem !important;
+    }
+
+    .btn-large {
+        padding: 1rem 1.75rem !important;
+        font-size: 0.9rem;
+    }
+
+    /* Stats más compactas */
+    .hero-stats-modern {
+        padding: 1rem 0 !important;
+        gap: 1rem !important;
+    }
+
+    .stat-modern {
+        min-width: 80px;
+    }
+
+    .stat-number {
+        font-size: 1.4rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.75rem !important;
+    }
+
+    .stat-circle {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+/* Efecto shimmer sutil en "Una Semana" - desktop y móvil */
+.hero .accent {
+    position: relative;
+    background: linear-gradient(90deg,
+            #2563eb 0%,
+            #3b82f6 25%,
+            #60a5fa 50%,
+            #3b82f6 75%,
+            #2563eb 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Asegurar que el efecto se vea bien en todos los dispositivos */
+@supports (-webkit-background-clip: text) {
+    .hero .accent {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
 
 /* Animaciones móviles para carruseles horizontales - Bucle infinito perfecto */
 @keyframes scroll-left-mobile {
     0% {
         transform: translateX(0%);
     }
+
     100% {
-        transform: translateX(-33.333%); /* Un tercio para bucle perfecto con triplicación */
+        transform: translateX(-33.333%);
+        /* Un tercio para bucle perfecto con triplicación */
     }
 }
 
@@ -2296,6 +2457,7 @@ body {
     0% {
         transform: translateX(-33.333%);
     }
+
     100% {
         transform: translateX(0%);
     }
@@ -2305,42 +2467,42 @@ body {
     .container {
         padding: 0 15px;
     }
-    
+
     .hero {
         padding: 80px 0 30px;
     }
-    
+
     .hero h1 {
         font-size: 2.2rem;
         line-height: 1.2;
     }
-    
+
     .hero p {
         font-size: 1.1rem;
     }
-    
+
     .hero-buttons {
         gap: 1rem;
     }
-    
+
     .btn-large {
         padding: 1rem 2rem;
         font-size: 0.9rem;
     }
-    
+
     .stat {
         min-width: 160px;
         padding: 1.2rem;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .section-header h2 {
         font-size: 1.9rem;
     }
-    
+
     .services-grid,
     .features-grid,
     .portfolio-grid,
@@ -2349,19 +2511,19 @@ body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .service-card,
     .feature-card {
         padding: 1.5rem;
     }
-    
+
     .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 15px;
         right: 15px;
     }
-    
+
     .whatsapp-float i {
         font-size: 1.3rem;
     }

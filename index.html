@@ -1,69 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Básico -->
     <title>WebCreaciones - Desarrollo Web Profesional | Landing Pages y Sitios Web</title>
-    <meta name="description" content="Desarrollo web profesional para pequeños negocios. Landing pages desde $150. Diseño responsivo, entrega rápida y precios accesibles. Tu primera página web en una semana.">
-    <meta name="keywords" content="desarrollo web, diseño web, landing page, sitio web económico, página web pequeños negocios, web responsivo, desarrollador web freelance">
+    <meta name="description"
+        content="Desarrollo web profesional para pequeños negocios. Landing pages desde $150. Diseño responsivo, entrega rápida y precios accesibles. Tu primera página web en una semana.">
+    <meta name="keywords"
+        content="desarrollo web, diseño web, landing page, sitio web económico, página web pequeños negocios, web responsivo, desarrollador web freelance">
     <meta name="author" content="WebCreaciones">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://web-creaciones.vercel.app">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://web-creaciones.vercel.app">
     <meta property="og:title" content="WebCreaciones - Desarrollo Web Profesional">
-    <meta property="og:description" content="Tu primera página web en una semana. Landing pages desde $150. Diseño responsivo y entrega rápida.">
+    <meta property="og:description"
+        content="Tu primera página web en una semana. Landing pages desde $150. Diseño responsivo y entrega rápida.">
     <meta property="og:image" content="https://web-creaciones.vercel.app/Img/MODA.webp">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="WebCreaciones">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://web-creaciones.vercel.app">
     <meta name="twitter:title" content="WebCreaciones - Desarrollo Web Profesional">
-    <meta name="twitter:description" content="Tu primera página web en una semana. Landing pages desde $150. Diseño responsivo y entrega rápida.">
+    <meta name="twitter:description"
+        content="Tu primera página web en una semana. Landing pages desde $150. Diseño responsivo y entrega rápida.">
     <meta name="twitter:image" content="https://web-creaciones.vercel.app/Img/MODA.webp">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#2563eb">
     <meta name="msapplication-TileColor" content="#2563eb">
-    
+
     <!-- Critical CSS inline para renderizado inmediato -->
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{--primary-color:#2563eb;--dark-color:#1f2937;--text-color:#374151;--white:#fff}
-        body{font-family:'Poppins',sans-serif;line-height:1.6;color:var(--text-color);background:var(--white)}
-        .header{background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;z-index:1000}
-        .container{max-width:1200px;margin:0 auto;padding:0 20px}
-        .header .container{display:flex;justify-content:space-between;align-items:center;padding:1rem 20px}
-        .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #1f2937;
+            --text-color: #374151;
+            --white: #fff
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--white)
+        }
+
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px
+        }
     </style>
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.min.css">
-    
+
     <!-- Preconnect para optimizar carga de recursos externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
+
     <!-- Cargar fuentes de forma asíncrona con font-display:swap -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"></noscript>
-    
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap">
+    </noscript>
+
     <!-- Cargar Font Awesome de forma asíncrona con font-display swap -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
     {
@@ -98,6 +153,7 @@
     }
     </script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -119,501 +175,558 @@
 
     <!-- Contenido Principal -->
     <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content-wrapper">
-            <!-- Carrusel Izquierdo -->
-            <div class="carousel-container left-carousel">
-                <div class="carousel-track">
-                    <img src="Img/MODA.webp" alt="Página web Boutique Moda Viva - Sitio elegante de moda" width="400" height="300" loading="eager">
-                    <img src="Img/AROMA.webp" alt="Página web Café Aroma Urbano - Sitio de cafetería" width="400" height="300" loading="lazy">
-                    <img src="Img/GymFit.webp" alt="Página web GymFit Studio - Sitio de gimnasio" width="400" height="300" loading="lazy">
-                    <img src="Img/TechSOLUTIONS.webp" alt="Página web TechSolutions - Sitio tecnológico" width="400" height="300" loading="lazy">
-                    <img src="Img/Archvision.webp" alt="Página web ArchVision Studio - Sitio de arquitectura" width="400" height="300" loading="lazy">
-                    <img src="Img/LensArt.webp" alt="Página web LensArt Photography - Portafolio fotográfico" width="400" height="300" loading="lazy">
-                    <!-- Duplicados para animación continua -->
-                    <img src="Img/MODA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/MODA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/MODA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content-wrapper">
+                <!-- Carrusel Izquierdo -->
+                <div class="carousel-container left-carousel">
+                    <div class="carousel-track">
+                        <img src="Img/MODA.webp" alt="Página web Boutique Moda Viva - Sitio elegante de moda"
+                            width="400" height="300" loading="eager">
+                        <img src="Img/AROMA.webp" alt="Página web Café Aroma Urbano - Sitio de cafetería" width="400"
+                            height="300" loading="lazy">
+                        <img src="Img/GymFit.webp" alt="Página web GymFit Studio - Sitio de gimnasio" width="400"
+                            height="300" loading="lazy">
+                        <img src="Img/TechSOLUTIONS.webp" alt="Página web TechSolutions - Sitio tecnológico" width="400"
+                            height="300" loading="lazy">
+                        <img src="Img/Archvision.webp" alt="Página web ArchVision Studio - Sitio de arquitectura"
+                            width="400" height="300" loading="lazy">
+                        <img src="Img/LensArt.webp" alt="Página web LensArt Photography - Portafolio fotográfico"
+                            width="400" height="300" loading="lazy">
+                        <!-- Duplicados para animación continua -->
+                        <img src="Img/MODA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/MODA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/MODA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                    </div>
+                </div>
+
+                <!-- Contenido Principal del Hero -->
+                <div class="container">
+                    <div class="hero-content">
+                        <!-- Badge minimalista -->
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span class="badge-text">Disponible para nuevos proyectos</span>
+                        </div>
+
+                        <h1>Tu Primera Página Web en <span class="accent">Una Semana</span></h1>
+                        <p class="hero-subtitle">Desarrollador frontend especializado en crear sitios web modernos,
+                            funcionales y responsivos. Presencia digital de calidad con precios accesibles.</p>
+
+                        <!-- Elementos de confianza minimalistas -->
+                        <div class="trust-indicators">
+                            <div class="trust-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Garantía 30 días</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Entrega rápida</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>100% Responsivo</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#contacto" class="btn btn-primary btn-large btn-modern">
+                                <span class="btn-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </span>
+                                <span class="btn-text">Conversemos</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                            <a href="#portafolio" class="btn btn-secondary btn-large btn-modern">
+                                <span class="btn-icon">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                                <span class="btn-text">Ver Ejemplos</span>
+                            </a>
+                        </div>
+
+                        <!-- Stats rediseñadas con estilo minimalista -->
+                        <div class="hero-stats-modern">
+                            <div class="stat-modern">
+                                <div class="stat-visual">
+                                    <div class="stat-circle"></div>
+                                    <span class="stat-number">15+</span>
+                                </div>
+                                <span class="stat-label">Sitios Creados</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-modern">
+                                <div class="stat-visual">
+                                    <div class="stat-circle"></div>
+                                    <span class="stat-number">5-7</span>
+                                </div>
+                                <span class="stat-label">Días Entrega</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-modern">
+                                <div class="stat-visual">
+                                    <div class="stat-circle"></div>
+                                    <span class="stat-number">100%</span>
+                                </div>
+                                <span class="stat-label">Responsivo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carrusel Derecho -->
+                <div class="carousel-container right-carousel">
+                    <div class="carousel-track">
+                        <img src="Img/Creative_flow.webp" alt="Página web CreativeFlow Agency - Agencia digital"
+                            width="400" height="300" loading="lazy">
+                        <img src="Img/Archvision.webp" alt="Página web ArchVision Studio - Arquitectura" width="400"
+                            height="300" loading="lazy">
+                        <img src="Img/LensArt.webp" alt="Página web LensArt Photography - Fotografía" width="400"
+                            height="300" loading="lazy">
+                        <img src="Img/AROMA.webp" alt="Página web Café Aroma Urbano - Cafetería" width="400"
+                            height="300" loading="lazy">
+                        <img src="Img/GymFit.webp" alt="Página web GymFit Studio - Gimnasio" width="400" height="300"
+                            loading="lazy">
+                        <img src="Img/TechSOLUTIONS.webp" alt="Página web TechSolutions - Tecnología" width="400"
+                            height="300" loading="lazy">
+                        <!-- Duplicados para animación continua -->
+                        <img src="Img/Creative_flow.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Creative_flow.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Creative_flow.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+                        <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
+                        <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy"
+                            aria-hidden="true">
+
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Contenido Principal del Hero -->
+        <!-- Por qué elegirme -->
+        <section id="por-que-elegirme" class="why-choose animate-on-scroll">
             <div class="container">
-                <div class="hero-content">
-                    <!-- Badge minimalista -->
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        <span class="badge-text">Disponible para nuevos proyectos</span>
+                <div class="section-header animate-on-scroll">
+                    <h2>¿Por Qué Trabajar Conmigo?</h2>
+                    <p>Soy nuevo en el freelance, pero eso significa dedicación total y precios justos</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card animate-cards">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Precios Accesibles</h3>
+                        <p>Como estoy empezando, ofrezco precios muy competitivos sin sacrificar calidad.</p>
                     </div>
-                    
-                    <h1>Tu Primera Página Web en <span class="accent">Una Semana</span></h1>
-                    <p class="hero-subtitle">Desarrollador frontend especializado en crear sitios web modernos, funcionales y responsivos. Presencia digital de calidad con precios accesibles.</p>
-                    
-                    <!-- Elementos de confianza minimalistas -->
-                    <div class="trust-indicators">
-                        <div class="trust-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Garantía 30 días</span>
-                        </div>
-                        <div class="trust-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Entrega rápida</span>
-                        </div>
-                        <div class="trust-item">
+                    <div class="feature-card animate-cards">
+                        <div class="feature-icon">
                             <i class="fas fa-mobile-alt"></i>
-                            <span>100% Responsivo</span>
+                        </div>
+                        <h3>100% Responsivo</h3>
+                        <p>Tu sitio se verá perfecto en celulares, tablets y computadoras.</p>
+                    </div>
+                    <div class="feature-card animate-cards">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Comunicación Directa</h3>
+                        <p>Te mantengo informado de cada paso y resuelvo todas tus dudas.</p>
+                    </div>
+                    <div class="feature-card animate-cards">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Dedicación Total</h3>
+                        <p>Cada proyecto es importante para mí, por eso le dedico toda mi atención.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portafolio -->
+        <section id="portafolio" class="portfolio animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>Mi Portafolio Completo</h2>
+                    <p>Todos los proyectos web que he desarrollado, desde boutiques hasta agencias digitales</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/MODA.webp" alt="Captura de pantalla del sitio web Boutique Moda Viva"
+                                class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800"
+                                height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Boutique "Moda Viva"</h3>
+                            <p>Sitio web elegante para boutique de moda con animaciones y diseño sofisticado.</p>
+                            <div class="portfolio-tags">
+                                <span>Boutique</span>
+                                <span>Animaciones</span>
+                                <span>En Desarrollo</span>
+                            </div>
+                            <span class="portfolio-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-tools"></i> En Desarrollo
+                            </span>
                         </div>
                     </div>
-                    
-                    <div class="hero-buttons">
-                        <a href="#contacto" class="btn btn-primary btn-large btn-modern">
-                            <span class="btn-icon">
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/AROMA.webp" alt="Captura de pantalla del sitio web Café Aroma Urbano"
+                                class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800"
+                                height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Café "Aroma Urbano"</h3>
+                            <p>Sitio web para café boutique con menú interactivo y ambiente acogedor.</p>
+                            <div class="portfolio-tags">
+                                <span>Café</span>
+                                <span>Menú Digital</span>
+                                <span>En Desarrollo</span>
+                            </div>
+                            <span class="portfolio-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-tools"></i> En Desarrollo
+                            </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/GymFit.webp" alt="Captura de pantalla del sitio web GymFit Studio"
+                                class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800"
+                                height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Gimnasio "GymFit Studio"</h3>
+                            <p>Sitio web dinámico para gimnasio con videos de fondo y diseño energético.</p>
+                            <div class="portfolio-tags">
+                                <span>Fitness</span>
+                                <span>Dinámico</span>
+                                <span>Video</span>
+                            </div>
+                            <a href="https://gym-fit-studio.vercel.app/" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/TechSOLUTIONS.webp"
+                                alt="Captura de pantalla del sitio web TechSolutions Consultores"
+                                class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800"
+                                height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>"TechSolutions Consultores"</h3>
+                            <p>Sitio web tecnológico con efectos de código y animaciones futuristas.</p>
+                            <div class="portfolio-tags">
+                                <span>Tecnología</span>
+                                <span>Futurista</span>
+                                <span>Efectos</span>
+                            </div>
+                            <a href="https://tech-solutions-consultores.vercel.app/" target="_blank"
+                                class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/Archvision.webp" alt="Captura de pantalla del sitio web ArchVision Studio"
+                                class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800"
+                                height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>ArchVision Studio</h3>
+                            <p>Sitio web moderno para estudio de arquitectura con diseño minimalista y elegante.</p>
+                            <div class="portfolio-tags">
+                                <span>Arquitectura</span>
+                                <span>Minimalista</span>
+                                <span>En Desarrollo</span>
+                            </div>
+                            <span class="portfolio-link" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-tools"></i> En Desarrollo
+                            </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/LensArt.webp" alt="Captura de pantalla del sitio web LensArt Photography"
+                                class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800"
+                                height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>LensArt Photography</h3>
+                            <p>Portafolio fotográfico profesional con galería interactiva y diseño artístico.</p>
+                            <div class="portfolio-tags">
+                                <span>Fotografía</span>
+                                <span>Artístico</span>
+                                <span>Galería</span>
+                            </div>
+                            <a href="https://lens-art-photography.vercel.app/" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item animate-cards">
+                        <div class="portfolio-image">
+                            <img src="Img/Creative_flow.webp"
+                                alt="Captura de pantalla del sitio web CreativeFlow Agency" class="portfolio-preview"
+                                onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>CreativeFlow Agency</h3>
+                            <p>Agencia digital innovadora con animaciones avanzadas y diseño de vanguardia.</p>
+                            <div class="portfolio-tags">
+                                <span>Agencia</span>
+                                <span>Innovador</span>
+                                <span>Vanguardia</span>
+                            </div>
+                            <a href="https://creative-flow-agency.vercel.app/" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i> Ver Proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Precios y Servicios -->
+        <section id="servicios" class="services animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>Mis Servicios</h2>
+                    <p>Te ofrezco soluciones web sencillas y efectivas para que tengas tu primera presencia digital</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-cards">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Landing Page Simple</h3>
+                        <p>Página de una sola sección ideal para presentar tu negocio o servicio.</p>
+                        <ul>
+                            <li>Diseño responsivo básico</li>
+                            <li>Información de contacto</li>
+                            <li>Botón de WhatsApp</li>
+                            <li>Galería de fotos</li>
+                        </ul>
+                        <div class="price">$150</div>
+                    </div>
+                    <div class="service-card featured animate-cards">
+                        <div class="service-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>Sitio Web Básico</h3>
+                        <p>Sitio de 3-4 páginas perfecto para pequeños negocios que inician online.</p>
+                        <ul>
+                            <li>3-4 páginas principales</li>
+                            <li>Diseño responsivo</li>
+                            <li>Formulario de contacto</li>
+                            <li>Integración WhatsApp</li>
+                        </ul>
+                        <div class="price">$300</div>
+                    </div>
+                    <div class="service-card animate-cards">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Mantenimiento Web</h3>
+                        <p>Actualización y mantenimiento de sitios web existentes con mejoras.</p>
+                        <ul>
+                            <li>Actualización de contenido</li>
+                            <li>Corrección de errores</li>
+                            <li>Nuevas secciones</li>
+                            <li>Mejoras de diseño</li>
+                        </ul>
+                        <div class="price">$80/mes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Las dudas más comunes de mis clientes</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item animate-cards">
+                        <div class="faq-question">
+                            <h3>¿Cuánto tiempo tardas en hacer mi página?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Una landing page simple: 5-7 días. Sitio web básico: 1-2 semanas. Te mantengo informado
+                                del progreso cada día.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-cards">
+                        <div class="faq-question">
+                            <h3>¿Usas plantillas o haces todo desde cero?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Trabajo con código básico pero funcional. No uso plantillas complicadas, sino que creo
+                                algo sencillo y personalizado para ti.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-cards">
+                        <div class="faq-question">
+                            <h3>¿Incluye el dominio y hosting?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No incluyo hosting ni dominio, pero te ayudo a elegir opciones económicas y te explico
+                                cómo configurar todo paso a paso.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-cards">
+                        <div class="faq-question">
+                            <h3>¿Qué pasa si no me gusta algo?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Te muestro el progreso antes de terminar y puedes pedir cambios. Mi objetivo es que
+                                quedes satisfecho con tu nueva página web.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="contact animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2>¿Hablamos de Tu Proyecto?</h2>
+                    <p>Cuéntame sobre tu proyecto, no te compromete a nada y puedo darte ideas sin costo.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info animate-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
                                 <i class="fab fa-whatsapp"></i>
-                            </span>
-                            <span class="btn-text">Conversemos</span>
-                            <span class="btn-arrow">→</span>
-                        </a>
-                        <a href="#portafolio" class="btn btn-secondary btn-large btn-modern">
-                            <span class="btn-icon">
-                                <i class="fas fa-eye"></i>
-                            </span>
-                            <span class="btn-text">Ver Ejemplos</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Stats rediseñadas con estilo minimalista -->
-                    <div class="hero-stats-modern">
-                        <div class="stat-modern">
-                            <div class="stat-visual">
-                                <div class="stat-circle"></div>
-                                <span class="stat-number">15+</span>
                             </div>
-                            <span class="stat-label">Sitios Creados</span>
+                            <h3>WhatsApp</h3>
+                            <p>La forma más fácil de hablar</p>
+                            <a href="https://wa.me/960407014?text=Hola, me interesa hacer una página web"
+                                class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Escribir Ahora
+                            </a>
                         </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-modern">
-                            <div class="stat-visual">
-                                <div class="stat-circle"></div>
-                                <span class="stat-number">5-7</span>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            <span class="stat-label">Días Entrega</span>
+                            <h3>Email</h3>
+                            <p>Para enviarme detalles de tu proyecto</p>
+                            <a href="mailto:webcreaciones.dev@gmail.com?subject=Consulta sobre desarrollo web&body=Hola, me interesa desarrollar una página web..."
+                                class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> Enviar Email
+                            </a>
                         </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-modern">
-                            <div class="stat-visual">
-                                <div class="stat-circle"></div>
-                                <span class="stat-number">100%</span>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit"
+                            method="POST">
+                            <!-- Web3Form Access Key -->
+                            <input type="hidden" name="access_key" value="40adae9e-fe9f-4617-b7a5-414a9148ff18">
+                            <input type="hidden" name="subject" value="Nuevo contacto desde WebCreaciones">
+                            <input type="hidden" name="from_name" value="WebCreaciones Landing">
+                            <input type="hidden" name="redirect" value="https://web-creaciones.vercel.app/gracias.html">
+
+                            <div class="form-group">
+                                <label for="nombre" class="visually-hidden">Tu nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required
+                                    aria-label="Nombre completo">
                             </div>
-                            <span class="stat-label">Responsivo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <div class="form-group">
+                                <label for="email" class="visually-hidden">Tu email</label>
+                                <input type="email" id="email" name="email" placeholder="Tu email" required
+                                    aria-label="Dirección de correo electrónico">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="visually-hidden">Tu teléfono (opcional)</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono (opcional)"
+                                    aria-label="Número de teléfono">
+                            </div>
+                            <div class="form-group">
+                                <label for="servicio" class="visually-hidden">¿Qué servicio necesitas?</label>
+                                <select id="servicio" name="servicio" required
+                                    aria-label="Selecciona el servicio que necesitas">
+                                    <option value="">¿Qué necesitas?</option>
+                                    <option value="Landing Page Simple ($150)">Landing Page Simple ($150)</option>
+                                    <option value="Sitio Web Básico ($300)">Sitio Web Básico ($300)</option>
+                                    <option value="Mantenimiento ($80/mes)">Mantenimiento ($80/mes)</option>
+                                    <option value="Solo una consulta (gratis)">Solo una consulta (gratis)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje" class="visually-hidden">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje"
+                                    placeholder="Cuéntame qué tienes en mente para tu página web..." rows="4" required
+                                    aria-label="Mensaje o consulta"></textarea>
+                            </div>
 
-            <!-- Carrusel Derecho -->
-            <div class="carousel-container right-carousel">
-                <div class="carousel-track">
-                    <img src="Img/Creative_flow.webp" alt="Página web CreativeFlow Agency - Agencia digital" width="400" height="300" loading="lazy">
-                    <img src="Img/Archvision.webp" alt="Página web ArchVision Studio - Arquitectura" width="400" height="300" loading="lazy">
-                    <img src="Img/LensArt.webp" alt="Página web LensArt Photography - Fotografía" width="400" height="300" loading="lazy">
-                    <img src="Img/AROMA.webp" alt="Página web Café Aroma Urbano - Cafetería" width="400" height="300" loading="lazy">
-                    <img src="Img/GymFit.webp" alt="Página web GymFit Studio - Gimnasio" width="400" height="300" loading="lazy">
-                    <img src="Img/TechSOLUTIONS.webp" alt="Página web TechSolutions - Tecnología" width="400" height="300" loading="lazy">
-                    <!-- Duplicados para animación continua -->
-                    <img src="Img/Creative_flow.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Creative_flow.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Creative_flow.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/Archvision.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/LensArt.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/AROMA.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/GymFit.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    <img src="Img/TechSOLUTIONS.webp" alt="" width="400" height="300" loading="lazy" aria-hidden="true">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+                            <!-- Honeypot para prevenir spam -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-    <!-- Por qué elegirme -->
-    <section id="por-que-elegirme" class="why-choose animate-on-scroll">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>¿Por Qué Trabajar Conmigo?</h2>
-                <p>Soy nuevo en el freelance, pero eso significa dedicación total y precios justos</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card animate-cards">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>Precios Accesibles</h3>
-                    <p>Como estoy empezando, ofrezco precios muy competitivos sin sacrificar calidad.</p>
-                </div>
-                <div class="feature-card animate-cards">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>100% Responsivo</h3>
-                    <p>Tu sitio se verá perfecto en celulares, tablets y computadoras.</p>
-                </div>
-                <div class="feature-card animate-cards">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Comunicación Directa</h3>
-                    <p>Te mantengo informado de cada paso y resuelvo todas tus dudas.</p>
-                </div>
-                <div class="feature-card animate-cards">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Dedicación Total</h3>
-                    <p>Cada proyecto es importante para mí, por eso le dedico toda mi atención.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                            </button>
 
-    <!-- Portafolio -->
-    <section id="portafolio" class="portfolio animate-on-scroll">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Mi Portafolio Completo</h2>
-                <p>Todos los proyectos web que he desarrollado, desde boutiques hasta agencias digitales</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/MODA.webp" alt="Captura de pantalla del sitio web Boutique Moda Viva" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Boutique "Moda Viva"</h3>
-                        <p>Sitio web elegante para boutique de moda con animaciones y diseño sofisticado.</p>
-                        <div class="portfolio-tags">
-                            <span>Boutique</span>
-                            <span>Animaciones</span>
-                            <span>En Desarrollo</span>
-                        </div>
-                        <span class="portfolio-link" style="opacity: 0.6; cursor: not-allowed;">
-                            <i class="fas fa-tools"></i> En Desarrollo
-                        </span>
-                    </div>
-                </div>
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/AROMA.webp" alt="Captura de pantalla del sitio web Café Aroma Urbano" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Café "Aroma Urbano"</h3>
-                        <p>Sitio web para café boutique con menú interactivo y ambiente acogedor.</p>
-                        <div class="portfolio-tags">
-                            <span>Café</span>
-                            <span>Menú Digital</span>
-                            <span>En Desarrollo</span>
-                        </div>
-                        <span class="portfolio-link" style="opacity: 0.6; cursor: not-allowed;">
-                            <i class="fas fa-tools"></i> En Desarrollo
-                        </span>
-                    </div>
-                </div>
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/GymFit.webp" alt="Captura de pantalla del sitio web GymFit Studio" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Gimnasio "GymFit Studio"</h3>
-                        <p>Sitio web dinámico para gimnasio con videos de fondo y diseño energético.</p>
-                        <div class="portfolio-tags">
-                            <span>Fitness</span>
-                            <span>Dinámico</span>
-                            <span>Video</span>
-                        </div>
-                        <a href="https://gym-fit-studio.vercel.app/" target="_blank" class="portfolio-link">
-                            <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/TechSOLUTIONS.webp" alt="Captura de pantalla del sitio web TechSolutions Consultores" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>"TechSolutions Consultores"</h3>
-                        <p>Sitio web tecnológico con efectos de código y animaciones futuristas.</p>
-                        <div class="portfolio-tags">
-                            <span>Tecnología</span>
-                            <span>Futurista</span>
-                            <span>Efectos</span>
-                        </div>
-                        <a href="https://tech-solutions-consultores.vercel.app/" target="_blank" class="portfolio-link">
-                            <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/Archvision.webp" alt="Captura de pantalla del sitio web ArchVision Studio" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>ArchVision Studio</h3>
-                        <p>Sitio web moderno para estudio de arquitectura con diseño minimalista y elegante.</p>
-                        <div class="portfolio-tags">
-                            <span>Arquitectura</span>
-                            <span>Minimalista</span>
-                            <span>En Desarrollo</span>
-                        </div>
-                        <span class="portfolio-link" style="opacity: 0.6; cursor: not-allowed;">
-                            <i class="fas fa-tools"></i> En Desarrollo
-                        </span>
-                    </div>
-                </div>
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/LensArt.webp" alt="Captura de pantalla del sitio web LensArt Photography" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>LensArt Photography</h3>
-                        <p>Portafolio fotográfico profesional con galería interactiva y diseño artístico.</p>
-                        <div class="portfolio-tags">
-                            <span>Fotografía</span>
-                            <span>Artístico</span>
-                            <span>Galería</span>
-                        </div>
-                        <a href="https://lens-art-photography.vercel.app/" target="_blank" class="portfolio-link">
-                            <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-item animate-cards">
-                    <div class="portfolio-image">
-                        <img src="Img/Creative_flow.webp" alt="Captura de pantalla del sitio web CreativeFlow Agency" class="portfolio-preview" onclick="openImageModal(this.src, this.alt)" width="800" height="600" loading="lazy">
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>CreativeFlow Agency</h3>
-                        <p>Agencia digital innovadora con animaciones avanzadas y diseño de vanguardia.</p>
-                        <div class="portfolio-tags">
-                            <span>Agencia</span>
-                            <span>Innovador</span>
-                            <span>Vanguardia</span>
-                        </div>
-                        <a href="https://creative-flow-agency.vercel.app/" target="_blank" class="portfolio-link">
-                            <i class="fas fa-external-link-alt"></i> Ver Proyecto
-                        </a>
+                            <div id="form-result" style="margin-top: 1rem; text-align: center; display: none;"></div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Precios y Servicios -->
-    <section id="servicios" class="services animate-on-scroll">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Mis Servicios</h2>
-                <p>Te ofrezco soluciones web sencillas y efectivas para que tengas tu primera presencia digital</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card animate-cards">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Landing Page Simple</h3>
-                    <p>Página de una sola sección ideal para presentar tu negocio o servicio.</p>
-                    <ul>
-                        <li>Diseño responsivo básico</li>
-                        <li>Información de contacto</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Galería de fotos</li>
-                    </ul>
-                    <div class="price">$150</div>
-                </div>
-                <div class="service-card featured animate-cards">
-                    <div class="service-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <h3>Sitio Web Básico</h3>
-                    <p>Sitio de 3-4 páginas perfecto para pequeños negocios que inician online.</p>
-                    <ul>
-                        <li>3-4 páginas principales</li>
-                        <li>Diseño responsivo</li>
-                        <li>Formulario de contacto</li>
-                        <li>Integración WhatsApp</li>
-                    </ul>
-                    <div class="price">$300</div>
-                </div>
-                <div class="service-card animate-cards">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Mantenimiento Web</h3>
-                    <p>Actualización y mantenimiento de sitios web existentes con mejoras.</p>
-                    <ul>
-                        <li>Actualización de contenido</li>
-                        <li>Corrección de errores</li>
-                        <li>Nuevas secciones</li>
-                        <li>Mejoras de diseño</li>
-                    </ul>
-                    <div class="price">$80/mes</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq animate-on-scroll">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Preguntas Frecuentes</h2>
-                <p>Las dudas más comunes de mis clientes</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item animate-cards">
-                    <div class="faq-question">
-                        <h3>¿Cuánto tiempo tardas en hacer mi página?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Una landing page simple: 5-7 días. Sitio web básico: 1-2 semanas. Te mantengo informado del progreso cada día.</p>
-                    </div>
-                </div>
-                <div class="faq-item animate-cards">
-                    <div class="faq-question">
-                        <h3>¿Usas plantillas o haces todo desde cero?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Trabajo con código básico pero funcional. No uso plantillas complicadas, sino que creo algo sencillo y personalizado para ti.</p>
-                    </div>
-                </div>
-                <div class="faq-item animate-cards">
-                    <div class="faq-question">
-                        <h3>¿Incluye el dominio y hosting?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No incluyo hosting ni dominio, pero te ayudo a elegir opciones económicas y te explico cómo configurar todo paso a paso.</p>
-                    </div>
-                </div>
-                <div class="faq-item animate-cards">
-                    <div class="faq-question">
-                        <h3>¿Qué pasa si no me gusta algo?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Te muestro el progreso antes de terminar y puedes pedir cambios. Mi objetivo es que quedes satisfecho con tu nueva página web.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contact animate-on-scroll">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>¿Hablamos de Tu Proyecto?</h2>
-                <p>Cuéntame sobre tu proyecto, no te compromete a nada y puedo darte ideas sin costo.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info animate-cards">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <h3>WhatsApp</h3>
-                        <p>La forma más fácil de hablar</p>
-                        <a href="https://wa.me/960407014?text=Hola, me interesa hacer una página web" class="btn btn-primary">
-                            <i class="fab fa-whatsapp"></i> Escribir Ahora
-                        </a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p>Para enviarme detalles de tu proyecto</p>
-                        <a href="mailto:webcreaciones.dev@gmail.com?subject=Consulta sobre desarrollo web&body=Hola, me interesa desarrollar una página web..." class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> Enviar Email
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Web3Form Access Key -->
-                        <input type="hidden" name="access_key" value="40adae9e-fe9f-4617-b7a5-414a9148ff18">
-                        <input type="hidden" name="subject" value="Nuevo contacto desde WebCreaciones">
-                        <input type="hidden" name="from_name" value="WebCreaciones Landing">
-                        <input type="hidden" name="redirect" value="https://web-creaciones.vercel.app/gracias.html">
-                        
-                        <div class="form-group">
-                            <label for="nombre" class="visually-hidden">Tu nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required aria-label="Nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="visually-hidden">Tu email</label>
-                            <input type="email" id="email" name="email" placeholder="Tu email" required aria-label="Dirección de correo electrónico">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono" class="visually-hidden">Tu teléfono (opcional)</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono (opcional)" aria-label="Número de teléfono">
-                        </div>
-                        <div class="form-group">
-                            <label for="servicio" class="visually-hidden">¿Qué servicio necesitas?</label>
-                            <select id="servicio" name="servicio" required aria-label="Selecciona el servicio que necesitas">
-                                <option value="">¿Qué necesitas?</option>
-                                <option value="Landing Page Simple ($150)">Landing Page Simple ($150)</option>
-                                <option value="Sitio Web Básico ($300)">Sitio Web Básico ($300)</option>
-                                <option value="Mantenimiento ($80/mes)">Mantenimiento ($80/mes)</option>
-                                <option value="Solo una consulta (gratis)">Solo una consulta (gratis)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje" class="visually-hidden">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntame qué tienes en mente para tu página web..." rows="4" required aria-label="Mensaje o consulta"></textarea>
-                        </div>
-                        
-                        <!-- Honeypot para prevenir spam -->
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                        </button>
-                        
-                        <div id="form-result" style="margin-top: 1rem; text-align: center; display: none;"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     </main>
-    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -622,9 +735,12 @@
                     <img src="logo.svg" alt="WebCreaciones" width="180" height="54" style="margin-bottom: 1rem;">
                     <p>Desarrollador frontend. Creando tu primera presencia digital con dedicación y precios justos.</p>
                     <div class="footer-social">
-                        <a href="https://wa.me/960407014" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:webcreaciones.dev@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/960407014" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:webcreaciones.dev@gmail.com" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-services">
@@ -647,13 +763,16 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 WebCreaciones. Desarrollo web profesional - Tu aliado digital.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.875rem; opacity: 0.8;">Contacto: <a href="mailto:webcreaciones.dev@gmail.com" style="color: inherit; text-decoration: underline;">webcreaciones.dev@gmail.com</a></p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; opacity: 0.8;">Contacto: <a
+                        href="mailto:webcreaciones.dev@gmail.com"
+                        style="color: inherit; text-decoration: underline;">webcreaciones.dev@gmail.com</a></p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/960407014?text=Hola, me interesa hacer una página web" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/960407014?text=Hola, me interesa hacer una página web" class="whatsapp-float" target="_blank"
+        rel="noopener" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -669,4 +788,5 @@
     <script src="script.js" defer></script>
     <script src="animations.js" defer></script>
 </body>
+
 </html>

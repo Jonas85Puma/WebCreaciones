@@ -1,42 +1,12 @@
 // Intersection Observer para animaciones on scroll
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu');
-    const nav = document.querySelector('.nav');
-    
-    if (mobileMenuBtn && nav) {
-        mobileMenuBtn.addEventListener('click', function() {
-            nav.classList.toggle('nav-active');
-            
-            // Cambiar icono del botón
-            const icon = mobileMenuBtn.querySelector('i');
-            if (nav.classList.contains('nav-active')) {
-                icon.className = 'fas fa-times';
-            } else {
-                icon.className = 'fas fa-bars';
-            }
-        });
-        
-        // Cerrar menú al hacer click en un enlace
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('nav-active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.className = 'fas fa-bars';
-            });
-        });
-        
-        // Cerrar menú al hacer click fuera
-        document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                nav.classList.remove('nav-active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.className = 'fas fa-bars';
-            }
-        });
-    }
+// Ejecutar cuando el DOM esté listo (compatible con defer)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimations);
+} else {
+    initAnimations();
+}
 
+function initAnimations() {
     // Configuración del observer
     const observerOptions = {
         threshold: 0.1,
@@ -114,41 +84,4 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
         section.classList.add('animate-on-scroll');
     });
-});
-
-// Funcionalidad FAQ (mantener la existente)
-document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentNode;
-            const faqAnswer = faqItem.querySelector('.faq-answer');
-            const toggle = question.querySelector('.faq-toggle');
-            
-            // Cerrar otros FAQs
-            faqQuestions.forEach(otherQuestion => {
-                if (otherQuestion !== question) {
-                    const otherItem = otherQuestion.parentNode;
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    const otherToggle = otherQuestion.querySelector('.faq-toggle');
-                    
-                    otherItem.classList.remove('active');
-                    otherAnswer.style.maxHeight = null;
-                    otherToggle.textContent = '+';
-                }
-            });
-            
-            // Toggle del FAQ actual
-            faqItem.classList.toggle('active');
-            
-            if (faqItem.classList.contains('active')) {
-                faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
-                toggle.textContent = '-';
-            } else {
-                faqAnswer.style.maxHeight = null;
-                toggle.textContent = '+';
-            }
-        });
-    });
-});
+}

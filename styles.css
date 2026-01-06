@@ -1754,6 +1754,10 @@ body {
     background: white;
 }
 
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
 .faq-answer p {
     padding: 0 2rem 1.5rem;
     color: #64748b;

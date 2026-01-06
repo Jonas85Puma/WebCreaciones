@@ -32,7 +32,13 @@ document.addEventListener('keydown', function(event) {
 // ========================================
 // INICIALIZACIÓN AL CARGAR EL DOM
 // ========================================
-document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScript);
+} else {
+    initScript();
+}
+
+function initScript() {
     // Prevenir que el modal se cierre al hacer clic en la imagen
     const modalContent = document.querySelector('.modal-content');
     if (modalContent) {
@@ -47,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     // Toggle menú móvil
     if (mobileMenu && nav) {
         mobileMenu.addEventListener('click', function(e) {
@@ -97,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // FAQ ACCORDION
     // ========================================
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
@@ -141,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+}
 
 // ========================================
 // HEADER SCROLL EFFECT

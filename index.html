@@ -49,7 +49,7 @@
     </style>
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
     
     <!-- Preconnect para optimizar carga de recursos externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,15 +60,9 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"></noscript>
     
-    <!-- Cargar Font Awesome de forma asíncrona -->
+    <!-- Cargar Font Awesome de forma asíncrona con font-display swap -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Script para cargar CSS asíncronamente (fallback para navegadores antiguos) -->
-    <script>
-        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-        !function(e){"use strict";var t=function(t,n,r){var o,i=e.document,l=i.createElement("link");if(n)o=n;else{var a=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=a[a.length-1]}var d=i.styleSheets;l.rel="stylesheet",l.href=t,l.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(l,n?o:o.nextSibling)});var f=function(e){for(var t=l.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return l.addEventListener&&l.addEventListener("load",function(){this.media=r||"all"}),l.onloadcssdefined=f,f(function(){l.media!==r&&(l.media=r)}),l};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
-    </script>
     
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">

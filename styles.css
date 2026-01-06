@@ -1553,6 +1553,18 @@ body {
     font-size: 1.2rem;
 }
 
+.author-info .author-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.author-info .author-name strong {
+    font-weight: 600;
+}
+
+/* Mantener compatibilidad con h4 si existe */
 .author-info h4 {
     font-weight: 600;
     color: var(--dark-color);

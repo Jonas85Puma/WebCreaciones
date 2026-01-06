@@ -29,20 +29,21 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Prevenir que el modal se cierre al hacer clic en la imagen
+// ========================================
+// INICIALIZACIÓN AL CARGAR EL DOM
+// ========================================
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevenir que el modal se cierre al hacer clic en la imagen
     const modalContent = document.querySelector('.modal-content');
     if (modalContent) {
         modalContent.addEventListener('click', function(event) {
             event.stopPropagation();
         });
     }
-});
 
-// ========================================
-// MENÚ MÓVIL MEJORADO
-// ========================================
-document.addEventListener('DOMContentLoaded', function() {
+    // ========================================
+    // MENÚ MÓVIL
+    // ========================================
     const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -91,23 +92,81 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
 
-// ========================================
-// SMOOTH SCROLL PARA NAVEGACIÓN
-// ========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // ========================================
+    // FAQ ACCORDION
+    // ========================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        if (question) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Cerrar todos los items
+                faqItems.forEach(faq => {
+                    faq.classList.remove('active');
+                    const toggle = faq.querySelector('.faq-toggle');
+                    if (toggle) toggle.textContent = '+';
+                });
+                
+                // Abrir el item clickeado si no estaba activo
+                if (!isActive) {
+                    item.classList.add('active');
+                    const toggle = item.querySelector('.faq-toggle');
+                    if (toggle) toggle.textContent = '−';
+                }
+            });
+        }
+    });
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+    // ========================================
+    // SMOOTH SCROLL PARA NAVEGACIÓN
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ========================================
+    // FAQ ACCORDION
+    // ========================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        if (question) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Cerrar todos los items
+                faqItems.forEach(faq => {
+                    faq.classList.remove('active');
+                    const toggle = faq.querySelector('.faq-toggle');
+                    if (toggle) toggle.textContent = '+';
+                });
+                
+                // Abrir el item clickeado si no estaba activo
+                if (!isActive) {
+                    item.classList.add('active');
+                    const toggle = item.querySelector('.faq-toggle');
+                    if (toggle) toggle.textContent = '−';
+                }
             });
         }
     });
@@ -129,33 +188,4 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
-});
-
-// ========================================
-// FAQ ACCORDION
-// ========================================
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', function() {
-            const isActive = item.classList.contains('active');
-            
-            // Cerrar todos los items
-            faqItems.forEach(faq => {
-                faq.classList.remove('active');
-                const toggle = faq.querySelector('.faq-toggle');
-                if (toggle) toggle.textContent = '+';
-            });
-            
-            // Abrir el item clickeado si no estaba activo
-            if (!isActive) {
-                item.classList.add('active');
-                const toggle = item.querySelector('.faq-toggle');
-                if (toggle) toggle.textContent = '−';
-            }
-        });
-    });
 });

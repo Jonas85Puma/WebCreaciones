@@ -2042,6 +2042,8 @@ body {
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
+
+/* Tablet/Desktop pequeño */
 @media (max-width: 1024px) {
     .hero-content-wrapper {
         grid-template-columns: 150px 1fr 150px;
@@ -2053,6 +2055,7 @@ body {
     }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
     .nav {
         display: none;
@@ -2127,24 +2130,32 @@ body {
         height: 38px;
     }
 
+    /* Hero optimizado para móviles */
     .hero {
         min-height: 100vh;
-        padding: 80px 0 40px;
+        padding: 100px 0 40px;
+        display: flex;
+        align-items: center;
     }
 
     .hero-content-wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
+        gap: 2rem;
+        align-items: center;
     }
 
     .carousel-container {
-        height: 80px;
+        height: 100px;
         order: 1;
+        width: 100%;
     }
 
     .hero .container {
         grid-column: 1;
         order: 2;
+        text-align: center;
+        padding: 0 1.5rem;
     }
 
     .right-carousel {
@@ -2155,43 +2166,45 @@ body {
         flex-direction: row;
         height: auto;
         width: 300%;
-        /* Triplicamos el ancho para las imágenes triplicadas */
     }
 
     .left-carousel .carousel-track {
-        animation: scroll-left-mobile 15s linear infinite;
+        animation: scroll-left-mobile 20s linear infinite;
     }
 
     .right-carousel .carousel-track {
-        animation: scroll-right-mobile 18s linear infinite;
+        animation: scroll-right-mobile 25s linear infinite;
     }
 
     .carousel-track img {
-        width: 100px;
-        height: 60px;
+        width: 120px;
+        height: 80px;
         margin-bottom: 0;
         margin-right: 15px;
     }
 
-    /* Estilos móviles para elementos minimalistas */
+    /* Hero content */
     .hero-badge {
         margin-bottom: 1.5rem;
     }
 
     .badge-text {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
     }
 
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         margin-bottom: 1.5rem;
-        letter-spacing: -2px;
+        letter-spacing: -1.5px;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         margin-bottom: 2rem;
         max-width: 100%;
+        line-height: 1.6;
     }
 
     .trust-indicators {
@@ -2202,6 +2215,7 @@ body {
 
     .trust-item {
         justify-content: center;
+        font-size: 0.95rem;
     }
 
     .hero p {
@@ -2218,12 +2232,14 @@ body {
 
     .btn-modern {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
         min-width: auto;
+        padding: 1.1rem 2rem;
+        font-size: 1rem;
     }
 
     .btn-arrow {
-        display: none;
+        display: inline-block;
     }
 
     .hero-stats-modern {
@@ -2236,18 +2252,46 @@ body {
         display: none;
     }
 
+    .stat-modern {
+        width: 100%;
+    }
+
     .stat-circle {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
 
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
+    .stat-label {
+        font-size: 0.95rem;
+    }
+
+    /* Animaciones visibles en móviles */
+    .animate-on-scroll {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+
+    .animate-cards {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
 
     .hero-stats {
         gap: 2rem;
+        flex-direction: column;
+    }
+
+    .stat {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
         flex-direction: column;
         align-items: center;
     }
@@ -2427,69 +2471,229 @@ body {
     }
 }
 
+/* Móviles pequeños (320px - 480px) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 1rem;
     }
 
+    .header .container {
+        padding: 1rem;
+    }
+
+    .logo img {
+        height: 35px;
+        width: auto;
+    }
+
+    /* Hero optimizado para móviles pequeños */
     .hero {
-        padding: 80px 0 30px;
+        min-height: 100vh;
+        padding: 90px 0 30px;
+    }
+
+    .hero .container {
+        padding: 0 1rem;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         line-height: 1.2;
+        letter-spacing: -1px;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .badge-text {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .carousel-container {
+        height: 80px;
+    }
+
+    .carousel-track img {
+        width: 100px;
+        height: 65px;
+        margin-right: 12px;
+        border-radius: 8px;
     }
 
     .hero-buttons {
-        gap: 1rem;
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .btn-modern {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
     }
 
     .btn-large {
-        padding: 1rem 2rem;
+        padding: 0.9rem 1.8rem;
         font-size: 0.9rem;
     }
 
+    .trust-item {
+        font-size: 0.85rem;
+    }
+
+    .stat-modern {
+        padding: 1rem 0;
+    }
+
+    .stat-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
     .stat {
-        min-width: 160px;
-        padding: 1.2rem;
+        min-width: auto;
+        width: 100%;
+        padding: 1.2rem 1rem;
     }
 
     .stat-number {
         font-size: 2rem;
     }
 
+    /* Secciones */
     .section-header h2 {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .section-header p {
+        font-size: 1rem;
     }
 
     .services-grid,
     .features-grid,
     .portfolio-grid,
-    .testimonials-grid,
     .pricing-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .service-card,
-    .feature-card {
+    .feature-card,
+    .portfolio-item,
+    .pricing-card {
         padding: 1.5rem;
     }
 
+    .service-card h3,
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .portfolio-content h3 {
+        font-size: 1.2rem;
+    }
+
+    /* FAQ */
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-question {
+        padding: 1.2rem 1rem;
+    }
+
+    .faq-answer p {
+        padding: 0 1rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Contacto */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+
+    /* WhatsApp float */
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
     }
 
     .whatsapp-float i {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+/* Móviles extra pequeños (320px) */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .carousel-track img {
+        width: 90px;
+        height: 60px;
+    }
+
+    .btn-modern {
+        padding: 0.9rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .stat-circle {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .stat-number {
+        font-size: 1.3rem !important;
     }
 }
 

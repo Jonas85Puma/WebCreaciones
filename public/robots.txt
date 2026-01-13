@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://web-creaciones.vercel.app/sitemap.xml

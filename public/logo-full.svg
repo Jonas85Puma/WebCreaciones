@@ -1,0 +1,27 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon/Symbol -->
+  <rect x="2" y="10" width="40" height="40" rx="8" fill="url(#gradient1)" />
+  <path d="M12 25 L22 35 L32 20" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M15 30 L22 37 L35 25" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+  
+  <!-- Text -->
+  <text x="50" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1e293b">
+    Web<tspan fill="url(#gradient2)">Creaciones</tspan>
+  </text>
+  <text x="50" y="48" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#64748b" letter-spacing="1">
+    DESARROLLO WEB
+  </text>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9333ea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

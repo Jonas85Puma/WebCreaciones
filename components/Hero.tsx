@@ -15,8 +15,8 @@ const projectsBase = [
   { src: "/Img/Archvision.webp", title: "Archvision" },
 ];
 
-// Duplicar 6 veces para efecto infinito suave sin cortes
-const projects = [...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase];
+// Duplicar 3 veces para efecto infinito
+const projects = [...projectsBase, ...projectsBase, ...projectsBase];
 
 export default function Hero() {
   return (
@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="absolute bottom-20 -right-40 w-72 h-72 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl" aria-hidden="true" />
       
       {/* Image carousel ribbons */}
-      <div className="absolute left-0 top-[30%] md:top-1/4 w-[200%] md:w-full overflow-hidden -rotate-12 opacity-50" aria-hidden="true">
+      <div className="absolute left-0 top-[18%] md:top-1/4 w-[200%] md:w-full overflow-hidden -rotate-12 opacity-50" aria-hidden="true">
         <div className="flex gap-3 md:gap-4 animate-scroll-left">
           {projects.map((project, i) => (
             <div key={i} className="relative w-28 h-18 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
@@ -40,13 +40,39 @@ export default function Hero() {
               />
             </div>
           ))}
+          {/* Duplicado para loop infinito en móvil */}
+          {projects.map((project, i) => (
+            <div key={`dup-${i}`} className="relative w-28 h-18 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
+              <Image
+                src={project.src}
+                alt=""
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 112px, 192px"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-[30%] md:bottom-1/4 w-[200%] md:w-full overflow-hidden rotate-12 opacity-50" aria-hidden="true">
+      <div className="absolute right-0 bottom-[38%] md:bottom-1/4 w-[200%] md:w-full overflow-hidden rotate-12 opacity-50" aria-hidden="true">
         <div className="flex gap-3 md:gap-4 animate-scroll-right">
           {projects.map((project, i) => (
             <div key={i} className="relative w-28 h-18 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
+              <Image
+                src={project.src}
+                alt=""
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 112px, 192px"
+              />
+            </div>
+          ))}
+          {/* Duplicado para loop infinito en móvil */}
+          {projects.map((project, i) => (
+            <div key={`dup-${i}`} className="relative w-28 h-18 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
               <Image
                 src={project.src}
                 alt=""

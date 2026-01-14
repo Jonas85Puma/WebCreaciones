@@ -4,19 +4,19 @@
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes scroll-right {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -29,25 +29,27 @@
   }
 }
 
-/* Animación rápida para móviles - 15s para que sea fluida */
+/* Animación rápida para móviles */
 .animate-scroll-left {
-  animation: scroll-left 15s linear infinite;
-  will-change: transform;
+  animation: scroll-left 20s linear infinite;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .animate-scroll-right {
-  animation: scroll-right 15s linear infinite;
-  will-change: transform;
+  animation: scroll-right 20s linear infinite;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Animación más lenta para desktop */
 @media (min-width: 768px) {
   .animate-scroll-left {
-    animation: scroll-left 45s linear infinite;
+    animation: scroll-left 50s linear infinite;
   }
   
   .animate-scroll-right {
-    animation: scroll-right 45s linear infinite;
+    animation: scroll-right 50s linear infinite;
   }
 }
 

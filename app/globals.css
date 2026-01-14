@@ -29,23 +29,25 @@
   }
 }
 
-/* Animación rápida para móviles */
+/* Animación rápida para móviles - 15s para que sea fluida */
 .animate-scroll-left {
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 15s linear infinite;
+  will-change: transform;
 }
 
 .animate-scroll-right {
-  animation: scroll-right 20s linear infinite;
+  animation: scroll-right 15s linear infinite;
+  will-change: transform;
 }
 
 /* Animación más lenta para desktop */
 @media (min-width: 768px) {
   .animate-scroll-left {
-    animation: scroll-left 60s linear infinite;
+    animation: scroll-left 45s linear infinite;
   }
   
   .animate-scroll-right {
-    animation: scroll-right 60s linear infinite;
+    animation: scroll-right 45s linear infinite;
   }
 }
 

@@ -15,45 +15,45 @@ const projectsBase = [
   { src: "/Img/Archvision.webp", title: "Archvision" },
 ];
 
-// Duplicar 4 veces para efecto infinito suave
-const projects = [...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase];
+// Duplicar 6 veces para efecto infinito suave en móviles
+const projects = [...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase, ...projectsBase];
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden">
+    <section id="hero" className="relative h-dvh min-h-[580px] max-h-[900px] flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden">
       {/* Decorative blobs */}
-      <div className="absolute top-20 -left-40 w-72 h-72 md:w-96 md:h-96 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
-      <div className="absolute bottom-20 -right-40 w-72 h-72 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700" aria-hidden="true" />
+      <div className="absolute top-10 -left-32 w-64 h-64 md:w-96 md:h-96 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-10 -right-32 w-64 h-64 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl" aria-hidden="true" />
       
       {/* Image carousel ribbons - visible on all screens */}
-      <div className="absolute left-0 top-1/4 w-full overflow-hidden -rotate-12 opacity-60 md:opacity-50" aria-hidden="true">
-        <div className="flex gap-3 md:gap-4 animate-scroll-left">
+      <div className="absolute left-0 top-[20%] w-[200%] overflow-hidden -rotate-12 opacity-50 md:opacity-40" aria-hidden="true">
+        <div className="flex gap-2 md:gap-4 animate-scroll-left will-change-transform">
           {projects.map((project, i) => (
-            <div key={i} className="relative w-32 h-20 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-lg md:shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
+            <div key={i} className="relative w-24 h-16 md:w-48 md:h-32 shrink-0 rounded-lg overflow-hidden shadow-lg border-2 border-white/50 dark:border-neutral-800/50">
               <Image
                 src={project.src}
                 alt=""
                 fill
                 className="object-cover"
                 loading="lazy"
-                sizes="(max-width: 768px) 128px, 192px"
+                sizes="(max-width: 768px) 96px, 192px"
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-1/4 w-full overflow-hidden rotate-12 opacity-60 md:opacity-50" aria-hidden="true">
-        <div className="flex gap-3 md:gap-4 animate-scroll-right">
+      <div className="absolute right-0 bottom-[20%] w-[200%] overflow-hidden rotate-12 opacity-50 md:opacity-40" aria-hidden="true">
+        <div className="flex gap-2 md:gap-4 animate-scroll-right will-change-transform">
           {projects.map((project, i) => (
-            <div key={i} className="relative w-32 h-20 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-lg md:shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
+            <div key={i} className="relative w-24 h-16 md:w-48 md:h-32 shrink-0 rounded-lg overflow-hidden shadow-lg border-2 border-white/50 dark:border-neutral-800/50">
               <Image
                 src={project.src}
                 alt=""
                 fill
                 className="object-cover"
                 loading="lazy"
-                sizes="(max-width: 768px) 128px, 192px"
+                sizes="(max-width: 768px) 96px, 192px"
               />
             </div>
           ))}
@@ -61,29 +61,29 @@ export default function Hero() {
       </div>
       
       {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-white/60 md:bg-white/50 xl:bg-white/40 dark:bg-black/70 dark:md:bg-black/60 dark:xl:bg-black/50 backdrop-blur-[1px] md:backdrop-blur-[2px]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/70 md:bg-white/50 dark:bg-black/80 dark:md:bg-black/60 backdrop-blur-[1px]" aria-hidden="true" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 pb-4 md:pt-20 md:pb-8">
-        <div className="max-w-5xl mx-auto text-center space-y-3 sm:space-y-4 md:space-y-6">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-2 sm:space-y-3 md:space-y-5">
           {/* Badge */}
           <div className="flex justify-center">
-            <Badge variant="secondary" className="inline-flex items-center gap-2 bg-blue-100/90 dark:bg-blue-900/30 backdrop-blur-sm text-blue-700 dark:text-blue-300 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium hover:bg-blue-200/90 dark:hover:bg-blue-800/30 transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
-              Disponible para nuevos proyectos
+            <Badge variant="secondary" className="inline-flex items-center gap-1.5 bg-blue-100/90 dark:bg-blue-900/30 backdrop-blur-sm text-blue-700 dark:text-blue-300 px-2.5 py-1 text-[10px] sm:text-xs md:text-sm font-medium">
+              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" aria-hidden="true" />
+              Disponible para proyectos
             </Badge>
           </div>
           
           {/* Main heading */}
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight px-2 text-slate-900 dark:text-white" style={{ textShadow: '0 3px 15px rgba(0,0,0,0.25), 0 1px 3px rgba(0,0,0,0.15)' }}>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white">
             Tu Primera Página Web en{" "}
             <span className="relative inline-block">
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient" style={{ textShadow: 'none' }}>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
                 Una Semana
               </span>
-              <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
-                <path d="M1 5.5C50 1.5 100 1.5 199 5.5" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+              <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full" height="6" viewBox="0 0 200 8" fill="none" aria-hidden="true">
+                <path d="M1 5.5C50 1.5 100 1.5 199 5.5" stroke="url(#hero-gradient)" strokeWidth="3" strokeLinecap="round"/>
                 <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#3B82F6" />
                     <stop offset="50%" stopColor="#9333EA" />
                     <stop offset="100%" stopColor="#EC4899" />
@@ -94,9 +94,9 @@ export default function Hero() {
           </h1>
           
           {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 font-medium" style={{ textShadow: '0 2px 8px rgba(255,255,255,0.9), 0 1px 3px rgba(0,0,0,0.1)' }}>
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed px-2">
             Desarrollador frontend especializado en crear sitios web modernos, funcionales y 100% responsivos. 
-            Presencia digital de calidad profesional con precios accesibles para emprendedores.
+            Presencia digital profesional con precios accesibles.
           </p>
           
           {/* CTA Buttons */}

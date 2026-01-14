@@ -216,8 +216,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y4VLHCJ27Q" strategy="afterInteractive" />
-        <Script id="ga" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-Y4VLHCJ27Q");`}</Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y4VLHCJ27Q" strategy="lazyOnload" />
+        <Script id="ga" strategy="lazyOnload">{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-Y4VLHCJ27Q");`}</Script>
       </body>
     </html>
   );

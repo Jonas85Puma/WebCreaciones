@@ -20,7 +20,7 @@ const projects = [...projectsBase, ...projectsBase, ...projectsBase, ...projects
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden pt-16 md:pt-20">
+    <section id="hero" className="relative h-[100dvh] min-h-[600px] flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-20 -left-40 w-72 h-72 md:w-96 md:h-96 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
       <div className="absolute bottom-20 -right-40 w-72 h-72 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700" aria-hidden="true" />
@@ -63,12 +63,12 @@ export default function Hero() {
       {/* Dark overlay for better text contrast */}
       <div className="absolute inset-0 bg-white/60 md:bg-white/50 xl:bg-white/40 dark:bg-black/70 dark:md:bg-black/60 dark:xl:bg-black/50 backdrop-blur-[1px] md:backdrop-blur-[2px]" aria-hidden="true" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 sm:py-8 md:py-12">
-        <div className="max-w-5xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 pb-4 md:pt-20 md:pb-8">
+        <div className="max-w-5xl mx-auto text-center space-y-3 sm:space-y-4 md:space-y-6">
           {/* Badge */}
           <div className="flex justify-center">
-            <Badge variant="secondary" className="inline-flex items-center gap-2 bg-blue-100/90 dark:bg-blue-900/30 backdrop-blur-sm text-blue-700 dark:text-blue-300 px-4 py-2 text-xs sm:text-sm font-medium hover:bg-blue-200/90 dark:hover:bg-blue-800/30 transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
+            <Badge variant="secondary" className="inline-flex items-center gap-2 bg-blue-100/90 dark:bg-blue-900/30 backdrop-blur-sm text-blue-700 dark:text-blue-300 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium hover:bg-blue-200/90 dark:hover:bg-blue-800/30 transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
               Disponible para nuevos proyectos
             </Badge>
           </div>
@@ -100,21 +100,21 @@ export default function Hero() {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-2 sm:pt-4 px-4">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center pt-1 sm:pt-4 px-4">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-full shadow-lg hover:shadow-2xl transition-all hover:scale-105 group" 
+              className="w-full sm:w-auto bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-5 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg rounded-full shadow-lg hover:shadow-2xl transition-all hover:scale-105 group" 
               asChild
             >
               <Link href="https://wa.me/51943850706?text=Hola, me interesa hacer una página web">
                 Conversemos por WhatsApp
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg rounded-full border-2 hover:bg-gray-50 dark:hover:bg-neutral-800 dark:border-neutral-600 dark:text-white transition-all" 
+              className="w-full sm:w-auto px-5 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg rounded-full border-2 hover:bg-gray-50 dark:hover:bg-neutral-800 dark:border-neutral-600 dark:text-white transition-all" 
               asChild
             >
               <Link href="#portfolio">Ver Ejemplos</Link>
@@ -122,17 +122,17 @@ export default function Hero() {
           </div>
           
           {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 pt-6 sm:pt-8 px-4 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-500" />
+          <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-1 sm:gap-y-2 pt-2 sm:pt-6 px-2 sm:px-4 text-xs sm:text-base text-gray-700 dark:text-gray-300 font-medium">
+            <span className="flex items-center gap-1 sm:gap-2">
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" aria-hidden="true" />
               Garantía 30 días
             </span>
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-500" />
+            <span className="flex items-center gap-1 sm:gap-2">
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" aria-hidden="true" />
               Entrega rápida
             </span>
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-500" />
+            <span className="flex items-center gap-1 sm:gap-2">
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" aria-hidden="true" />
               100% Responsivo
             </span>
           </div>

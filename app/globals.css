@@ -29,12 +29,24 @@
   }
 }
 
+/* Animación rápida para móviles */
 .animate-scroll-left {
-  animation: scroll-left 60s linear infinite;
+  animation: scroll-left 20s linear infinite;
 }
 
 .animate-scroll-right {
-  animation: scroll-right 60s linear infinite;
+  animation: scroll-right 20s linear infinite;
+}
+
+/* Animación más lenta para desktop */
+@media (min-width: 768px) {
+  .animate-scroll-left {
+    animation: scroll-left 60s linear infinite;
+  }
+  
+  .animate-scroll-right {
+    animation: scroll-right 60s linear infinite;
+  }
 }
 
 .animate-gradient {

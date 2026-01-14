@@ -20,36 +20,40 @@ const projects = [...projectsBase, ...projectsBase, ...projectsBase, ...projects
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden pt-16 md:pt-20">
       {/* Decorative blobs */}
-      <div className="absolute top-20 -left-40 w-72 h-72 md:w-96 md:h-96 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 -right-40 w-72 h-72 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+      <div className="absolute top-20 -left-40 w-72 h-72 md:w-96 md:h-96 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
+      <div className="absolute bottom-20 -right-40 w-72 h-72 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700" aria-hidden="true" />
       
       {/* Image carousel ribbons - visible on all screens */}
-      <div className="absolute left-0 top-1/4 w-full overflow-hidden -rotate-12 opacity-60 md:opacity-50">
+      <div className="absolute left-0 top-1/4 w-full overflow-hidden -rotate-12 opacity-60 md:opacity-50" aria-hidden="true">
         <div className="flex gap-3 md:gap-4 animate-scroll-left">
           {projects.map((project, i) => (
             <div key={i} className="relative w-32 h-20 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-lg md:shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
               <Image
                 src={project.src}
-                alt={project.title}
+                alt=""
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 128px, 192px"
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-1/4 w-full overflow-hidden rotate-12 opacity-60 md:opacity-50">
+      <div className="absolute right-0 bottom-1/4 w-full overflow-hidden rotate-12 opacity-60 md:opacity-50" aria-hidden="true">
         <div className="flex gap-3 md:gap-4 animate-scroll-right">
           {projects.map((project, i) => (
             <div key={i} className="relative w-32 h-20 md:w-48 md:h-32 shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-lg md:shadow-xl border-2 md:border-4 border-white dark:border-neutral-800">
               <Image
                 src={project.src}
-                alt={project.title}
+                alt=""
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 128px, 192px"
               />
             </div>
           ))}
@@ -57,10 +61,10 @@ export default function Hero() {
       </div>
       
       {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-white/60 md:bg-white/50 xl:bg-white/40 dark:bg-black/70 dark:md:bg-black/60 dark:xl:bg-black/50 backdrop-blur-[1px] md:backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-white/60 md:bg-white/50 xl:bg-white/40 dark:bg-black/70 dark:md:bg-black/60 dark:xl:bg-black/50 backdrop-blur-[1px] md:backdrop-blur-[2px]" aria-hidden="true" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 sm:py-16 md:py-20">
-        <div className="max-w-5xl mx-auto text-center space-y-6 sm:space-y-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-4 sm:py-8 md:py-12">
+        <div className="max-w-5xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
           {/* Badge */}
           <div className="flex justify-center">
             <Badge variant="secondary" className="inline-flex items-center gap-2 bg-blue-100/90 dark:bg-blue-900/30 backdrop-blur-sm text-blue-700 dark:text-blue-300 px-4 py-2 text-xs sm:text-sm font-medium hover:bg-blue-200/90 dark:hover:bg-blue-800/30 transition-colors" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>

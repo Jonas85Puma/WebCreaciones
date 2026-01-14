@@ -57,14 +57,14 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Síguenos</h4>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-neutral-700 dark:bg-neutral-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar Facebook" className="w-10 h-10 bg-neutral-700 dark:bg-neutral-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 bg-neutral-700 dark:bg-neutral-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar LinkedIn" className="w-10 h-10 bg-neutral-700 dark:bg-neutral-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 bg-neutral-700 dark:bg-neutral-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
-                <Github className="w-5 h-5" />
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar GitHub" className="w-10 h-10 bg-neutral-700 dark:bg-neutral-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                <Github className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
             <p className="text-slate-400 text-xs mt-4">

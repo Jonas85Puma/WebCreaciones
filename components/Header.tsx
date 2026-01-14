@@ -27,12 +27,12 @@ export default function Header() {
     <header className="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
-            <Image src="/logo-full.svg" alt="WebCreaciones" width={220} height={60} className="h-12 md:h-14 w-auto dark:brightness-110" priority />
+          <a href="#hero" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer" aria-label="Ir al inicio">
+            <Image src="/logo-full.svg" alt="WebCreaciones - Desarrollo Web Profesional" width={220} height={60} className="h-12 md:h-14 w-auto dark:brightness-110" priority />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Navegación principal">
             {links.map((link) => (
               <a 
                 key={link.href} 
@@ -57,16 +57,17 @@ export default function Header() {
             <button 
               onClick={() => setMenuOpen(!menuOpen)} 
               className="p-2 hover:bg-white/20 dark:hover:bg-white/10 rounded-lg transition-colors"
-              aria-label="Toggle menu"
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={menuOpen}
             >
-              {menuOpen ? <X className="w-6 h-6 text-gray-800 dark:text-white" /> : <Menu className="w-6 h-6 text-gray-800 dark:text-white" />}
+              {menuOpen ? <X className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" /> : <Menu className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <nav className="md:hidden py-4 bg-white/90 dark:bg-black/90 backdrop-blur-lg rounded-2xl mt-2 animate-in slide-in-from-top">
+          <nav className="md:hidden py-4 bg-white/90 dark:bg-black/90 backdrop-blur-lg rounded-2xl mt-2 animate-in slide-in-from-top" aria-label="Menú móvil">
             {links.map((link) => (
               <a 
                 key={link.href} 

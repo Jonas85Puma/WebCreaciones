@@ -144,7 +144,7 @@ export default function ContactForm() {
           >
             <Label htmlFor="service" className="text-gray-700 dark:text-gray-300 font-semibold">Tipo de servicio *</Label>
             <Select name="service" required>
-              <SelectTrigger className="h-12 border-2 border-slate-200 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white focus:border-blue-500 transition-all duration-300 hover:border-slate-300 dark:hover:border-neutral-500">
+              <SelectTrigger aria-label="Selecciona un tipo de servicio" className="h-12 border-2 border-slate-200 dark:border-neutral-600 dark:bg-neutral-700 dark:text-white focus:border-blue-500 transition-all duration-300 hover:border-slate-300 dark:hover:border-neutral-500">
                 <SelectValue placeholder="Selecciona un servicio" />
               </SelectTrigger>
               <SelectContent className="bg-white dark:bg-neutral-800 border-2 shadow-lg max-h-[300px] dark:border-neutral-600">

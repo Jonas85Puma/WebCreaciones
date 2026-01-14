@@ -20,7 +20,7 @@ const projects = [...projectsBase, ...projectsBase, ...projectsBase, ...projects
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-[calc(100svh-4rem)] md:min-h-screen flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden">
+    <section id="hero" className="relative min-h-[calc(100svh-4rem)] md:h-[calc(100vh-4rem)] md:min-h-0 flex items-center justify-center bg-linear-to-br from-slate-50 via-white to-blue-50 dark:from-black dark:via-black dark:to-black overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-20 -left-40 w-72 h-72 md:w-96 md:h-96 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl" aria-hidden="true" />
       <div className="absolute bottom-20 -right-40 w-72 h-72 md:w-96 md:h-96 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl" aria-hidden="true" />

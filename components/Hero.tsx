@@ -14,8 +14,8 @@ const projectsBase = [
   { src: "/Img/Archvision.webp", title: "Archvision" },
 ];
 
-// Duplicar para efecto infinito
-const projects = [...projectsBase, ...projectsBase, ...projectsBase];
+// Duplicar para efecto infinito (menos en móvil para rendimiento)
+const projects = [...projectsBase, ...projectsBase];
 
 export default function Hero() {
   return (

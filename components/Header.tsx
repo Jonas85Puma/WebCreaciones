@@ -24,7 +24,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50">
+    <header className="fixed top-0 w-full bg-white/80 dark:bg-black/80 md:bg-transparent md:backdrop-blur-sm z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#hero" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer" aria-label="Ir al inicio">

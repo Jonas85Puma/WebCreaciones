@@ -192,6 +192,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
+        {/* Preload logo para LCP más rápido */}
+        <link rel="preload" href="/logo-full.svg" as="image" type="image/svg+xml" />
+        
         <meta name="theme-color" content="#2563eb" />
         <meta name="format-detection" content="telephone=no" />
         <link rel="canonical" href="https://web-creaciones.vercel.app" />

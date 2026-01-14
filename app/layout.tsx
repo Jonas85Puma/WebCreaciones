@@ -5,9 +5,11 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "900"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -183,8 +185,13 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="es" className="scroll-smooth dark" suppressHydrationWarning>
       <head>
+        {/* Preconnect para reducir latencia de red */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
         <meta name="theme-color" content="#2563eb" />
         <meta name="format-detection" content="telephone=no" />
         <link rel="canonical" href="https://web-creaciones.vercel.app" />
@@ -192,24 +199,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json" 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} 
         />
-        {/* Script para evitar flash de tema incorrecto */}
+        {/* Script para evitar flash de tema incorrecto - optimizado */}
         <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              try {
-                var theme = localStorage.getItem('theme');
-                if (theme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                  document.documentElement.classList.add('light');
-                } else {
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.classList.remove('light');
-                }
-              } catch (e) {
-                document.documentElement.classList.add('dark');
-              }
-            })();
-          `
+          __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.classList.toggle('dark',t!=='light');document.documentElement.classList.toggle('light',t==='light')}catch(e){document.documentElement.classList.add('dark')}})();`
         }} />
       </head>
       <body className={poppins.className + " antialiased overflow-x-hidden bg-white dark:bg-black transition-colors"}>

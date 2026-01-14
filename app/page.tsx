@@ -1,11 +1,22 @@
-﻿import Header from "@/components/Header";
+﻿import dynamic from "next/dynamic";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
-import Services from "@/components/Services";
-import FAQ from "@/components/FAQ";
-import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
+// Componentes debajo del fold - carga diferida para mejor rendimiento
+const Portfolio = dynamic(() => import("@/components/Portfolio"), { 
+  loading: () => <div className="min-h-screen" /> 
+});
+const Services = dynamic(() => import("@/components/Services"), {
+  loading: () => <div className="min-h-[50vh]" />
+});
+const FAQ = dynamic(() => import("@/components/FAQ"), {
+  loading: () => <div className="min-h-[50vh]" />
+});
+const ContactForm = dynamic(() => import("@/components/ContactForm"), {
+  loading: () => <div className="min-h-[50vh]" />
+});
+const Footer = dynamic(() => import("@/components/Footer"));
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
 
 export default function Home() {
   return (

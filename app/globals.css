@@ -2,54 +2,51 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Optimización de animaciones para GPU */
 @keyframes scroll-left {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes scroll-right {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
 }
 
 @keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-/* Animación rápida para móviles */
-.animate-scroll-left {
-  animation: scroll-left 20s linear infinite;
+/* Animaciones con composición en GPU */
+.animate-scroll-left,
+.animate-scroll-right {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  contain: layout style;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
 }
 
 .animate-scroll-right {
   animation: scroll-right 20s linear infinite;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-/* Animación más lenta para desktop */
+/* Desktop: animaciones más lentas */
 @media (min-width: 768px) {
-  .animate-scroll-left {
-    animation: scroll-left 50s linear infinite;
-  }
-  
-  .animate-scroll-right {
-    animation: scroll-right 50s linear infinite;
+  .animate-scroll-left { animation-duration: 50s; }
+  .animate-scroll-right { animation-duration: 50s; }
+}
+
+/* Reducir motion para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-left,
+  .animate-scroll-right,
+  .animate-gradient {
+    animation: none;
   }
 }
 

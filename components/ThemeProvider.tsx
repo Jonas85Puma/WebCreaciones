@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { createContext, useContext, useEffect, useState, useCallback, useMemo } from "react";
 
 type Theme = "light" | "dark";
 
@@ -12,36 +12,25 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Función para obtener tema inicial sin causar reflow
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") return "dark";
+  return (localStorage.getItem("theme") as Theme) || "dark";
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
+  const [theme, setThemeState] = useState<Theme>(getInitialTheme);
 
-  // Inicializar en el cliente
+  // Sincronizar con localStorage y aplicar clase (una sola vez al cambiar)
   useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "dark" || stored === "light") {
-      setThemeState(stored);
-    } else {
-      // Por defecto modo oscuro
-      setThemeState("dark");
-    }
-    setMounted(true);
-  }, []);
-
-  // Aplicar clase dark/light al documento
-  useEffect(() => {
-    if (!mounted) return;
-    
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-      root.classList.remove("light");
-    } else {
-      root.classList.remove("dark");
-      root.classList.add("light");
-    }
+    // Usar requestAnimationFrame para evitar reflow forzado
+    requestAnimationFrame(() => {
+      const root = document.documentElement;
+      root.classList.toggle("dark", theme === "dark");
+      root.classList.toggle("light", theme === "light");
+    });
     localStorage.setItem("theme", theme);
-  }, [theme, mounted]);
+  }, [theme]);
 
   const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme);
@@ -51,11 +40,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setThemeState(prev => prev === "dark" ? "light" : "dark");
   }, []);
 
-  const value = { theme, setTheme, toggleTheme };
+  const value = useMemo(() => ({ theme, setTheme, toggleTheme }), [theme, setTheme, toggleTheme]);
 
+  // Renderizar children inmediatamente, sin esperar mounted
   return (
     <ThemeContext.Provider value={value}>
-      {mounted ? children : null}
+      {children}
     </ThemeContext.Provider>
   );
 }

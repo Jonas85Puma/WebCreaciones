@@ -34,7 +34,8 @@ export default function Hero() {
                 alt=""
                 fill
                 className="object-cover"
-                loading="lazy"
+                priority={i < 3}
+                loading={i < 3 ? undefined : "lazy"}
                 sizes="(max-width: 768px) 112px, 192px"
               />
             </div>
@@ -47,7 +48,8 @@ export default function Hero() {
                 alt=""
                 fill
                 className="object-cover"
-                loading="lazy"
+                priority={i < 3}
+                loading={i < 3 ? undefined : "lazy"}
                 sizes="(max-width: 768px) 112px, 192px"
               />
             </div>
@@ -64,7 +66,8 @@ export default function Hero() {
                 alt=""
                 fill
                 className="object-cover"
-                loading="lazy"
+                priority={i < 3}
+                loading={i < 3 ? undefined : "lazy"}
                 sizes="(max-width: 768px) 112px, 192px"
               />
             </div>
@@ -77,7 +80,8 @@ export default function Hero() {
                 alt=""
                 fill
                 className="object-cover"
-                loading="lazy"
+                priority={i < 3}
+                loading={i < 3 ? undefined : "lazy"}
                 sizes="(max-width: 768px) 112px, 192px"
               />
             </div>

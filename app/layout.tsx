@@ -196,6 +196,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preload logo para LCP más rápido */}
         <link rel="preload" href="/logo-full.svg" as="image" type="image/svg+xml" />
         
+        {/* Preconnect a dominios externos */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
         <meta name="theme-color" content="#2563eb" />
         <meta name="format-detection" content="telephone=no" />
         <link rel="canonical" href="https://www.web-creaciones.com" />

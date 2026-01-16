@@ -16,10 +16,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.web-creaciones.com"),
   title: {
-    default: "WebCreaciones - Desarrollo Web Profesional | Landing Pages desde $150",
+    default: "WebCreaciones - Desarrollo Web Profesional | Landing Pages desde $99",
     template: "%s | WebCreaciones"
   },
-  description: "Desarrollo web profesional para pequeños negocios y emprendedores. Landing pages desde $150, sitios web desde $300. Diseño 100% responsivo, entrega en 1 semana, hosting incluido. Desarrollador web freelance en Lima, Perú.",
+  description: "Desarrollo web profesional para pequeños negocios y emprendedores. Landing pages desde $99, sitios web desde $249. Diseño 100% responsivo, entrega en 1 semana, hosting incluido. Desarrollador web freelance en Lima, Perú.",
   keywords: [
     "desarrollo web", 
     "diseño web", 
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     url: "https://www.web-creaciones.com",
     siteName: "WebCreaciones",
     title: "WebCreaciones - Desarrollo Web Profesional | Tu web en 1 semana",
-    description: "Tu primera página web profesional en una semana. Landing pages desde $150. Diseño responsivo, hosting incluido y precios accesibles para emprendedores.",
+    description: "Tu primera página web profesional en una semana. Landing pages desde $99. Diseño responsivo, hosting incluido y precios accesibles para emprendedores.",
     images: [
       { 
         url: "/og-image.webp", 
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "WebCreaciones - Tu página web profesional en 1 semana",
-    description: "Landing pages desde $150. Diseño responsivo, hosting incluido. Desarrollo web para emprendedores.",
+    description: "Landing pages desde $99. Diseño responsivo, hosting incluido. Desarrollo web para emprendedores.",
     images: ["/og-image.webp"],
     creator: "@webcreaciones",
   },
@@ -108,7 +108,7 @@ const jsonLd = {
       "url": "https://www.web-creaciones.com",
       "telephone": "+51943850706",
       "email": "webcreaciones.dev@gmail.com",
-      "priceRange": "$80 - $300",
+      "priceRange": "$50 - $249",
       "areaServed": {
         "@type": "Country",
         "name": "Peru"
@@ -125,7 +125,7 @@ const jsonLd = {
               "name": "Landing Page Simple",
               "description": "Página web de una sola página con diseño responsivo"
             },
-            "price": "150",
+            "price": "99",
             "priceCurrency": "USD"
           },
           {
@@ -135,7 +135,7 @@ const jsonLd = {
               "name": "Sitio Web Básico",
               "description": "Sitio web de hasta 5 páginas con diseño personalizado"
             },
-            "price": "300",
+            "price": "249",
             "priceCurrency": "USD"
           },
           {
@@ -145,7 +145,7 @@ const jsonLd = {
               "name": "Mantenimiento Mensual",
               "description": "Actualizaciones, correcciones y soporte continuo"
             },
-            "price": "80",
+            "price": "50",
             "priceCurrency": "USD"
           }
         ]

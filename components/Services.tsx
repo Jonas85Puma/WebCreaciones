@@ -10,7 +10,9 @@ const services = [
   { 
     icon: Code2, 
     title: "Landing Page", 
-    price: "$150", 
+    price: "$99", 
+    oldPrice: "$150",
+    discount: "67% OFF",
     popular: false,
     gradient: "from-blue-500 to-cyan-500",
     features: [
@@ -26,7 +28,9 @@ const services = [
   { 
     icon: Palette, 
     title: "Sitio Web Completo", 
-    price: "$300", 
+    price: "$249", 
+    oldPrice: "$300",
+    discount: "17% OFF",
     popular: true,
     gradient: "from-purple-500 to-pink-500",
     features: [
@@ -43,7 +47,9 @@ const services = [
   { 
     icon: Zap, 
     title: "Mantenimiento", 
-    price: "$80/mes", 
+    price: "$50/mes", 
+    oldPrice: "$80/mes",
+    discount: "38% OFF",
     popular: false,
     gradient: "from-orange-500 to-red-500",
     features: [
@@ -124,7 +130,19 @@ export default function Services() {
                   
                   <CardContent className="space-y-6 flex-1 flex flex-col">
                     <div className={`text-center py-4 bg-linear-to-r ${service.gradient} bg-clip-text`}>
-                      <div className="text-5xl font-bold text-transparent">{service.price}</div>
+                      {service.discount && (
+                        <Badge className="mb-2 bg-red-500 text-white text-xs font-bold px-2 py-1">
+                          {service.discount}
+                        </Badge>
+                      )}
+                      <div className="flex items-center justify-center gap-2">
+                        {service.oldPrice && (
+                          <span className="text-2xl font-semibold text-gray-400 dark:text-gray-500 line-through">
+                            {service.oldPrice}
+                          </span>
+                        )}
+                        <div className="text-5xl font-bold text-transparent">{service.price}</div>
+                      </div>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Entrega: {service.time}</p>
                     </div>
                     

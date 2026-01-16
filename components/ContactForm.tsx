@@ -298,9 +298,9 @@ export default function ContactForm() {
                   <SelectValue placeholder="Selecciona un servicio" />
                 </SelectTrigger>
                 <SelectContent className="bg-white dark:bg-neutral-800 border-2 shadow-lg dark:border-neutral-600">
-                  <SelectItem value="landing" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Landing Page Simple ($150)</SelectItem>
-                  <SelectItem value="website" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Sitio Web Básico ($300)</SelectItem>
-                  <SelectItem value="maintenance" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Mantenimiento Mensual ($80/mes)</SelectItem>
+                  <SelectItem value="landing" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Landing Page Simple ($99)</SelectItem>
+                  <SelectItem value="website" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Sitio Web Básico ($249)</SelectItem>
+                  <SelectItem value="maintenance" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Mantenimiento Mensual ($50/mes)</SelectItem>
                   <SelectItem value="other" className="dark:text-white dark:hover:bg-neutral-700 text-sm">Otro / Consulta</SelectItem>
                 </SelectContent>
               </Select>

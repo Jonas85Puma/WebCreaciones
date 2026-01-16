@@ -5,12 +5,11 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const poppins = Poppins({
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
   preload: true,
   fallback: ["system-ui", "arial"],
-  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -188,14 +187,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className="scroll-smooth dark" suppressHydrationWarning>
       <head>
-        {/* Preconnect prioritarios */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        {/* Preconnect para reducir latencia de red */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
-        {/* Preload recursos críticos */}
+        {/* Preload logo para LCP más rápido */}
         <link rel="preload" href="/logo-full.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         
         <meta name="theme-color" content="#2563eb" />
         <meta name="format-detection" content="telephone=no" />

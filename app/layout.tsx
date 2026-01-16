@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://web-creaciones.vercel.app"),
+  metadataBase: new URL("https://www.web-creaciones.com"),
   title: {
     default: "WebCreaciones - Desarrollo Web Profesional | Landing Pages desde $150",
     template: "%s | WebCreaciones"
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "web para emprendedores",
     "sitio web profesional"
   ],
-  authors: [{ name: "WebCreaciones", url: "https://web-creaciones.vercel.app" }],
+  authors: [{ name: "WebCreaciones", url: "https://www.web-creaciones.com" }],
   creator: "WebCreaciones",
   publisher: "WebCreaciones",
   robots: { 
@@ -50,12 +50,12 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    canonical: "https://web-creaciones.vercel.app",
+    canonical: "https://www.web-creaciones.com",
   },
   openGraph: {
     type: "website",
     locale: "es_PE",
-    url: "https://web-creaciones.vercel.app",
+    url: "https://www.web-creaciones.com",
     siteName: "WebCreaciones",
     title: "WebCreaciones - Desarrollo Web Profesional | Tu web en 1 semana",
     description: "Tu primera página web profesional en una semana. Landing pages desde $150. Diseño responsivo, hosting incluido y precios accesibles para emprendedores.",
@@ -93,18 +93,18 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://web-creaciones.vercel.app/#website",
-      "url": "https://web-creaciones.vercel.app",
+      "@id": "https://www.web-creaciones.com/#website",
+      "url": "https://www.web-creaciones.com",
       "name": "WebCreaciones",
       "description": "Desarrollo web profesional para pequeños negocios y emprendedores",
       "inLanguage": "es-PE"
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://web-creaciones.vercel.app/#business",
+      "@id": "https://www.web-creaciones.com/#business",
       "name": "WebCreaciones",
       "description": "Desarrollo web profesional para pequeños negocios. Landing pages y sitios web responsivos con entrega rápida.",
-      "url": "https://web-creaciones.vercel.app",
+      "url": "https://www.web-creaciones.com",
       "telephone": "+51943850706",
       "email": "webcreaciones.dev@gmail.com",
       "priceRange": "$80 - $300",
@@ -152,7 +152,7 @@ const jsonLd = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://web-creaciones.vercel.app/#faq",
+      "@id": "https://www.web-creaciones.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -197,7 +197,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         <meta name="theme-color" content="#2563eb" />
         <meta name="format-detection" content="telephone=no" />
-        <link rel="canonical" href="https://web-creaciones.vercel.app" />
+        <link rel="canonical" href="https://www.web-creaciones.com" />
         <script 
           type="application/ld+json" 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} 

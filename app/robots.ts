@@ -17,6 +17,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://web-creaciones.vercel.app/sitemap.xml',
+    sitemap: 'https://www.web-creaciones.com/sitemap.xml',
   }
 }

@@ -164,7 +164,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit} className="bg-white dark:bg-neutral-900 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5 border border-gray-200 dark:border-neutral-800">
             <input type="hidden" name="access_key" value="40adae9e-fe9f-4617-b7a5-414a9148ff18" />
             <input type="hidden" name="subject" value="Nuevo contacto desde WebCreaciones" />
-            <input type="hidden" name="redirect" value="https://web-creaciones.vercel.app/gracias" />
+            <input type="hidden" name="redirect" value="https://www.web-creaciones.com/gracias" />
             
             {/* Header del formulario */}
             <div className="text-center pb-4 sm:pb-5 border-b border-slate-100 dark:border-neutral-800">

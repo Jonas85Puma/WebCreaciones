@@ -212,8 +212,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y4VLHCJ27Q" strategy="lazyOnload" />
-        <Script id="ga" strategy="lazyOnload">{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-Y4VLHCJ27Q");`}</Script>
+        <Script id="ga-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          
+          // Cargar GA solo en desktop o después de interacción en móvil
+          if (window.innerWidth >= 768) {
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4VLHCJ27Q';
+            script.async = true;
+            document.head.appendChild(script);
+            script.onload = () => {
+              gtag('js', new Date());
+              gtag('config', 'G-Y4VLHCJ27Q');
+            };
+          } else {
+            let loaded = false;
+            const loadGA = () => {
+              if (!loaded) {
+                loaded = true;
+                const script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y4VLHCJ27Q';
+                script.async = true;
+                document.head.appendChild(script);
+                script.onload = () => {
+                  gtag('js', new Date());
+                  gtag('config', 'G-Y4VLHCJ27Q');
+                };
+              }
+            };
+            ['scroll', 'click', 'touchstart'].forEach(event => {
+              document.addEventListener(event, loadGA, { once: true, passive: true });
+            });
+            setTimeout(loadGA, 5000); // Fallback después de 5s
+          }
+        `}</Script>
       </body>
     </html>
   );

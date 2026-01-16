@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": {
+            "chrome": "90",
+            "firefox": "90",
+            "safari": "15",
+            "edge": "90"
+          },
+          "useBuiltIns": false,
+          "modules": false
+        }
+      }
+    ]
+  ]
+}

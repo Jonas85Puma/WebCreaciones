@@ -5,11 +5,12 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
   display: "swap",
   preload: true,
   fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {

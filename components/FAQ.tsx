@@ -2,16 +2,18 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { HelpCircle, MessageCircleQuestion } from "lucide-react";
+import { HelpCircle, MessageCircleQuestion, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 const faqs = [
-  { q: "¿Cuánto tiempo tardarás en crear mi página web?", a: "Dependiendo del tipo de proyecto: Landing Page (5-7 días), Sitio Web Básico (1-2 semanas). Contando desde la aprobación del diseño. Trabajo con metodología ágil para entregarte resultados rápidos y profesionales." },
-  { q: "¿Incluyes hosting y dominio?", a: "El desarrollo incluye subida a Vercel (hosting gratuito con CDN global). El dominio personalizado lo adquieres tú, pero te ayudo con la configuración sin costo adicional. También te asesoro sobre las mejores opciones." },
-  { q: "¿Puedo hacer cambios después de la entrega?", a: "Sí, incluyo 1 revisión menor gratuita dentro de los 30 días. Cambios mayores se pueden contratar por separado o con el plan de mantenimiento mensual que incluye actualizaciones ilimitadas." },
+  { q: "¿Cuánto tiempo tardarás en crear mi página web?", a: "Dependiendo del tipo de proyecto: Landing Page (5-7 días), Sitio Web Completo (1-2 semanas). Si no entrego en el tiempo acordado, ¡te devuelvo el 20% de tu inversión! Esta es mi garantía de tiempo de entrega." },
+  { q: "¿Incluyes hosting y dominio?", a: "El desarrollo incluye hosting gratuito en Vercel con CDN global. Para tu dominio personalizado, tengo una alianza exclusiva con Hostinger: usando mi código de referido obtienes un 20% de descuento en tu dominio y hosting. Te ayudo a configurarlo todo sin costo adicional." },
+  { q: "¿Qué garantías ofrecen?", a: "Ofrezco dos garantías: 1) Garantía de tiempo - Si no entrego en la fecha acordada, te devuelvo el 20% del costo total. 2) Garantía de satisfacción - Trabajamos juntos hasta que estés 100% conforme con el resultado." },
+  { q: "¿Puedo hacer cambios después de la entrega?", a: "Sí, incluyo 2 revisiones gratuitas durante el desarrollo y 30 días de soporte gratuito después de la entrega para ajustes menores. Para cambios mayores, puedes contratar el plan de mantenimiento mensual." },
   { q: "¿Mi sitio será responsive?", a: "¡Absolutamente! Todos mis diseños se adaptan perfectamente a celulares, tablets y computadoras. Utilizo las últimas tecnologías (Next.js, Tailwind) para garantizar una experiencia óptima en todos los dispositivos." },
   { q: "¿Qué necesitas de mí para empezar?", a: "Principalmente: contenido (textos e imágenes de calidad), colores/estilo preferido, ejemplos de sitios que te gusten, y tu logo si tienes uno. Te guío en todo el proceso para que sea lo más simple posible." },
 ];
+
 
 export default function FAQ() {
   return (
@@ -19,9 +21,9 @@ export default function FAQ() {
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-400/5 dark:bg-purple-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400/5 dark:bg-blue-500/5 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -39,7 +41,7 @@ export default function FAQ() {
             Todo lo que necesitas saber antes de empezar tu proyecto
           </p>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,6 +73,39 @@ export default function FAQ() {
               ))}
             </Accordion>
           </Card>
+        </motion.div>
+
+        {/* Tarjeta de Garantía Destacada */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-10 sm:mt-14"
+        >
+          <div className="bg-linear-to-r from-green-500 to-emerald-600 rounded-2xl p-6 sm:p-8 text-center text-white shadow-xl relative overflow-hidden">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full translate-y-1/2 -translate-x-1/2" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <Shield className="w-8 h-8" />
+                </div>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">
+                🛡️ Garantía de Tiempo de Entrega
+              </h3>
+              <p className="text-green-50 text-sm sm:text-base max-w-md mx-auto">
+                Si no entrego tu proyecto en el tiempo acordado,
+                <span className="font-bold text-white"> te devuelvo el 20% </span>
+                de tu inversión. ¡Sin preguntas, sin excusas!
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

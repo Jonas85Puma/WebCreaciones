@@ -2,69 +2,93 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Code2, Palette, Zap, Check, TrendingUp, Sparkles } from "lucide-react";
+import { Code2, Palette, Zap, Check, TrendingUp, Sparkles, Shield, DollarSign } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
-const services = [
-  { 
-    icon: Code2, 
-    title: "Landing Page", 
-    price: "$99", 
-    oldPrice: "$150",
+// Tipo de cambio aproximado: 1 USD = 3.75 PEN
+const EXCHANGE_RATE = 3.75;
+
+const servicesData = [
+  {
+    icon: Code2,
+    title: "Landing Page",
+    priceUSD: 99,
+    oldPriceUSD: 150,
     discount: "67% OFF",
     popular: false,
     gradient: "from-blue-500 to-cyan-500",
     features: [
-      "Diseño responsivo profesional", 
-      "Información de contacto", 
-      "Formulario integrado", 
+      "Diseño responsivo profesional",
+      "Información de contacto",
+      "Formulario integrado",
       "1 página optimizada",
       "Hosting incluido (Vercel)"
-    ], 
+    ],
     time: "5-7 días",
     description: "Perfecta para validar tu idea"
   },
-  { 
-    icon: Palette, 
-    title: "Sitio Web Completo", 
-    price: "$249", 
-    oldPrice: "$300",
+  {
+    icon: Palette,
+    title: "Sitio Web Completo",
+    priceUSD: 249,
+    oldPriceUSD: 300,
     discount: "17% OFF",
     popular: true,
     gradient: "from-purple-500 to-pink-500",
     features: [
-      "Hasta 5 páginas", 
-      "Diseño 100% personalizado", 
-      "Formularios múltiples", 
-      "Galería de imágenes", 
+      "Hasta 5 páginas",
+      "Diseño 100% personalizado",
+      "Formularios múltiples",
+      "Galería de imágenes",
       "Mapa interactivo",
       "SEO optimizado"
-    ], 
+    ],
     time: "1-2 semanas",
     description: "La solución más completa"
   },
-  { 
-    icon: Zap, 
-    title: "Mantenimiento", 
-    price: "$50/mes", 
-    oldPrice: "$80/mes",
-    discount: "38% OFF",
+  {
+    icon: Zap,
+    title: "Mantenimiento",
+    priceUSD: 40,
+    oldPriceUSD: 80,
+    discount: "50% OFF",
     popular: false,
     gradient: "from-orange-500 to-red-500",
+    isMonthly: true,
     features: [
-      "Actualizaciones ilimitadas", 
-      "Corrección de bugs", 
-      "Backups automáticos", 
+      "Actualizaciones ilimitadas",
+      "Corrección de bugs",
+      "Backups automáticos",
       "Mejoras de diseño",
       "Soporte prioritario 24/7"
-    ], 
+    ],
     time: "Mensual",
     description: "Mantén tu web siempre actualizada"
   },
 ];
 
 export default function Services() {
+  const [currency, setCurrency] = useState<"USD" | "PEN">("USD");
+
+  useEffect(() => {
+    // Detectar zona horaria del usuario para inferir si está en Perú
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (userTimeZone === "America/Lima") {
+      setCurrency("PEN");
+    }
+  }, []);
+
+  const formatPrice = (priceUSD: number, isMonthly?: boolean) => {
+    if (currency === "USD") {
+      return `$${priceUSD}${isMonthly ? "/mes" : ""}`;
+    } else {
+      const pricePEN = Math.round(priceUSD * EXCHANGE_RATE);
+      return `S/${pricePEN}${isMonthly ? "/mes" : ""}`;
+    }
+  };
+
   return (
     <section id="servicios" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-linear-to-br from-white via-blue-50/30 to-purple-50/30 dark:from-black dark:via-black dark:to-black relative overflow-hidden">
       {/* Animated background elements */}
@@ -72,9 +96,9 @@ export default function Services() {
         <div className="absolute top-1/4 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-purple-400/10 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700" />
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,10 +113,41 @@ export default function Services() {
             Planes para Cada Necesidad
           </h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">Soluciones web profesionales adaptadas a tu presupuesto</p>
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <Badge className="bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/30 px-4 py-2">
+              <Shield className="w-4 h-4 mr-2" />
+              Garantía: 20% de devolución si no entrego a tiempo
+            </Badge>
+          </div>
+
+          {/* Selector de Moneda */}
+          <div className="mt-6 flex items-center justify-center gap-2">
+            <span className="text-sm text-gray-500 dark:text-gray-400">Moneda:</span>
+            <div className="flex bg-gray-100 dark:bg-neutral-800 rounded-full p-1">
+              <button
+                onClick={() => setCurrency("USD")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${currency === "USD"
+                  ? "bg-white dark:bg-neutral-700 text-gray-900 dark:text-white shadow-sm"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                  }`}
+              >
+                🇺🇸 USD
+              </button>
+              <button
+                onClick={() => setCurrency("PEN")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${currency === "PEN"
+                  ? "bg-white dark:bg-neutral-700 text-gray-900 dark:text-white shadow-sm"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                  }`}
+              >
+                🇵🇪 PEN
+              </button>
+            </div>
+          </div>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-          {services.map((service, i) => {
+          {servicesData.map((service, i) => {
             const Icon = service.icon;
             return (
               <motion.div
@@ -102,10 +157,9 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
               >
-                <Card 
-                  className={`relative group hover:shadow-2xl transition-all duration-500 h-full flex flex-col bg-white dark:bg-neutral-900 ${
-                    service.popular ? 'border-4 border-purple-200 dark:border-purple-900 shadow-xl scale-105' : 'border-2 hover:border-blue-200 dark:border-neutral-800 dark:hover:border-neutral-700'
-                  }`}
+                <Card
+                  className={`relative group hover:shadow-2xl transition-all duration-500 h-full flex flex-col bg-white dark:bg-neutral-900 ${service.popular ? 'border-4 border-purple-200 dark:border-purple-900 shadow-xl scale-105' : 'border-2 hover:border-blue-200 dark:border-neutral-800 dark:hover:border-neutral-700'
+                    }`}
                 >
                   {service.popular && (
                     <motion.div
@@ -119,7 +173,7 @@ export default function Services() {
                       </Badge>
                     </motion.div>
                   )}
-                  
+
                   <CardHeader className="text-center pb-4">
                     <div className={`w-16 h-16 mx-auto bg-linear-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                       <Icon className="w-8 h-8 text-white" />
@@ -127,7 +181,7 @@ export default function Services() {
                     <CardTitle className="text-2xl mb-2 dark:text-white">{service.title}</CardTitle>
                     <CardDescription className="text-sm dark:text-gray-400">{service.description}</CardDescription>
                   </CardHeader>
-                  
+
                   <CardContent className="space-y-6 flex-1 flex flex-col">
                     <div className={`text-center py-4 bg-linear-to-r ${service.gradient} bg-clip-text`}>
                       {service.discount && (
@@ -136,19 +190,19 @@ export default function Services() {
                         </Badge>
                       )}
                       <div className="flex items-center justify-center gap-2">
-                        {service.oldPrice && (
+                        {service.oldPriceUSD && (
                           <span className="text-2xl font-semibold text-gray-400 dark:text-gray-500 line-through">
-                            {service.oldPrice}
+                            {formatPrice(service.oldPriceUSD, service.isMonthly)}
                           </span>
                         )}
-                        <div className="text-5xl font-bold text-transparent">{service.price}</div>
+                        <div className="text-5xl font-bold text-transparent">{formatPrice(service.priceUSD, service.isMonthly)}</div>
                       </div>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Entrega: {service.time}</p>
                     </div>
-                    
+
                     <ul className="space-y-3 flex-1">
                       {service.features.map((f, j) => (
-                        <motion.li 
+                        <motion.li
                           key={j}
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
@@ -161,8 +215,8 @@ export default function Services() {
                         </motion.li>
                       ))}
                     </ul>
-                    
-                    <Button 
+
+                    <Button
                       className={`w-full group/btn ${service.popular ? `bg-linear-to-r ${service.gradient} text-white hover:shadow-xl` : 'dark:border-neutral-600 dark:text-white dark:hover:bg-neutral-700'}`}
                       variant={service.popular ? "default" : "outline"}
                       size="lg"

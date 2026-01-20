@@ -189,13 +189,13 @@ export default function Services() {
                           {service.discount}
                         </Badge>
                       )}
-                      <div className="flex items-center justify-center gap-2">
+                      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                         {service.oldPriceUSD && (
-                          <span className="text-2xl font-semibold text-gray-400 dark:text-gray-500 line-through">
+                          <span className="text-xl sm:text-2xl font-semibold text-gray-400 dark:text-gray-500 line-through">
                             {formatPrice(service.oldPriceUSD, service.isMonthly)}
                           </span>
                         )}
-                        <div className="text-5xl font-bold text-transparent">{formatPrice(service.priceUSD, service.isMonthly)}</div>
+                        <div className="text-4xl sm:text-5xl font-bold text-transparent break-all">{formatPrice(service.priceUSD, service.isMonthly)}</div>
                       </div>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Entrega: {service.time}</p>
                     </div>

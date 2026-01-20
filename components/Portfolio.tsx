@@ -182,44 +182,48 @@ export default function Portfolio() {
       <div className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-between container mx-auto px-6 py-20 lg:py-0">
 
         {/* Imagen en primer plano - Solo visible en MÓVILES */}
-        <div className="lg:hidden w-full mb-8 mt-4">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`mobile-img-${activeIndex}`}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/10"
-            >
-              <Image
-                src={activeProject.img}
-                alt={activeProject.name}
-                fill
-                className="object-cover"
-                priority
-              />
-              {/* Gradiente sutil en la imagen */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        <div className="lg:hidden w-full mb-8 mt-4 relative z-10">
+          <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/10 bg-neutral-900">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.div
+                key={`mobile-img-${activeIndex}`}
+                initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full"
+                style={{ willChange: "transform, opacity" }}
+              >
+                <Image
+                  src={activeProject.img}
+                  alt={activeProject.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                {/* Gradiente sutil en la imagen */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-              {/* Badge de estado en la imagen */}
-              {activeProject.status === "dev" && (
-                <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-orange-500/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <Hammer className="w-3.5 h-3.5 text-white" />
-                  <span className="text-xs font-medium text-white">En desarrollo</span>
-                </div>
-              )}
-              {activeProject.status === "live" && (
-                <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-green-500/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-                  </span>
-                  <span className="text-xs font-medium text-white">En vivo</span>
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
+                {/* Badge de estado en la imagen */}
+                {activeProject.status === "dev" && (
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-orange-500/90 backdrop-blur-sm px-3 py-1.5 rounded-full z-10">
+                    <Hammer className="w-3.5 h-3.5 text-white" />
+                    <span className="text-xs font-medium text-white">En desarrollo</span>
+                  </div>
+                )}
+                {activeProject.status === "live" && (
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-green-500/90 backdrop-blur-sm px-3 py-1.5 rounded-full z-10">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+                    </span>
+                    <span className="text-xs font-medium text-white">En vivo</span>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
         {/* Panel izquierdo - Información del proyecto */}
         <div className="flex-1 flex flex-col justify-center max-w-xl lg:pr-12">

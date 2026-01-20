@@ -412,12 +412,16 @@ export default function Portfolio() {
           <button
             key={index}
             onClick={() => goToProject(index)}
-            className={`
-              w-2 h-2 rounded-full transition-all
-              ${index === activeIndex ? "bg-white w-6" : "bg-white/40 hover:bg-white/60"}
-            `}
+            className="p-3 group focus:outline-none"
             aria-label={`Ir al proyecto ${index + 1}`}
-          />
+          >
+            <span
+              className={`
+                block h-2 rounded-full transition-all duration-300
+                ${index === activeIndex ? "bg-white w-6 scale-110" : "w-2 bg-white/40 group-hover:bg-white/60"}
+              `}
+            />
+          </button>
         ))}
       </div>
     </section>
